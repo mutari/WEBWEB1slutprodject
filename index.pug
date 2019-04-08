@@ -5,24 +5,20 @@ html(leng=sv)
         link(rel="stylesheet" href="style.css")
     body
         // header element inehåller en meny samt logo bild
-        header 
-            #logo
-            #stars
-            ul
-                li 
-                    a Mat
-                li
-                    a Event
-                li
-                    a Hyra Utrustning
-                li 
-                    a Om oss
+        //- include laddar header.pug filen i från mapen parts
+        include parts/header.pug
+        
         // image är ett bild spel
-        #image
-            h1 image
+        //- include laddar image.pug i part mapen då dena delen av html är samma i alla htmlfiler
+        include parts/image.pug
+
+
         // main inehåller allt sidans inehål
+        //- main är det änds som skiljer alla sider ifrån varandra
         main
             h1 main 
+
+
         // footer inehåler kontakt uppgifter och ett mail formolär
-        footer
-            h1 footre
+        //- laddar in filen footer.pug i från mapen parts
+        include parts/footer.pug
