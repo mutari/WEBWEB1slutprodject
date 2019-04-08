@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html body {
+  width: 1200px;
+  height: 1570px;
+  margin: auto;
+  border: solid 1px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: "40px 180px 880px 320px";
+      grid-template-rows: "40px 180px 880px 320px";
+      grid-template-areas: "header" "image" "main" "footer";
+}
+
+html body header {
+  grid-area: "header";
+  border: solid 1px black;
+}
+
+html body header #logo {
+  width: 50px;
+  height: 50px;
+  border: solid 1px black;
+}
+
+html body header #stars {
+  width: 225px;
+  height: 30px;
+  border: solid 1px black;
+}
+
+html body #image {
+  grid-area: "image";
+  border: solid 1px black;
+}
+
+html body main {
+  grid-area: "main";
+  border: solid 1px black;
+}
+
+html body footer {
+  grid-area: "footer";
+  border: solid 1px black;
+}
+/*# sourceMappingURL=style.css.map */
