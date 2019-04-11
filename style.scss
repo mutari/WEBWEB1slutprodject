@@ -7,7 +7,6 @@ html {
 
     body {
         width: 1200px;
-        height: 1570px;
         
         margin: auto;
 
@@ -16,7 +15,7 @@ html {
         //jag använder grid för att placera ut alla object
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 70px 180px 880px 320px;
+        grid-template-rows: 70px 180px 1fr 320px;
         grid-template-areas: "header"
                              "image"
                              "main"
@@ -95,6 +94,81 @@ html {
         footer {
             grid-area: "footer";
             border: solid 1px black;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 30px;
+            grid-template-areas: "kontakt message ."
+                                 ". copy .";
+            padding: 20px;
+            padding-bottom: 0px;
+
+            #kontakt {
+                grid-area: kontakt;
+                border: solid 1px black;
+                padding: 10px;
+
+                h1 {
+                    font-size: 140%;
+                }
+                p, h5 {
+                    margin-left: 10px;
+                }
+
+                .tider {
+                    margin-left: 20px;
+                }
+            }
+
+            #message {
+                grid-area: message;
+                border: solid 1px black;
+                padding: 10px 40px 10px 40px;
+
+                h1 {
+                    font-size: 140%;
+                }
+
+                form {
+
+                    label {
+                        margin: 0;
+                        font-size: 80%;
+                        color: rgb(87, 87, 87);
+                        margin-left: 10px;
+                    }
+
+                    input[type=text] {
+                        width: 300px;
+                        margin: 5px;
+                    }
+
+                    textarea {
+                        resize: none;
+                    }
+
+                    button {
+                        color: white;
+                        background-color: black;
+                        border: none;
+                        font-size: 13px;
+                        padding: 20px;
+                        padding: 3px;
+                    }
+
+                }
+
+            }
+
+            #copy {
+                grid-area: copy;
+                border: dotted 1px black;
+                width: 100px;
+                text-align: center;
+                margin: auto;
+                font-size: 80%;
+                color: gray;
+            }
+
         }
 
     }

@@ -5,15 +5,14 @@
 
 html body {
   width: 1200px;
-  height: 1570px;
   margin: auto;
   border: solid 1px black;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 70px 180px 880px 320px;
-      grid-template-rows: 70px 180px 880px 320px;
+  -ms-grid-rows: 70px 180px 1fr 320px;
+      grid-template-rows: 70px 180px 1fr 320px;
       grid-template-areas: "header" "image" "main" "footer";
 }
 
@@ -94,5 +93,83 @@ html body main {
 html body footer {
   grid-area: "footer";
   border: solid 1px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 30px;
+      grid-template-rows: 1fr 30px;
+      grid-template-areas: "kontakt message ." ". copy .";
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+html body footer #kontakt {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: kontakt;
+  border: solid 1px black;
+  padding: 10px;
+}
+
+html body footer #kontakt h1 {
+  font-size: 140%;
+}
+
+html body footer #kontakt p, html body footer #kontakt h5 {
+  margin-left: 10px;
+}
+
+html body footer #kontakt .tider {
+  margin-left: 20px;
+}
+
+html body footer #message {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: message;
+  border: solid 1px black;
+  padding: 10px 40px 10px 40px;
+}
+
+html body footer #message h1 {
+  font-size: 140%;
+}
+
+html body footer #message form label {
+  margin: 0;
+  font-size: 80%;
+  color: #575757;
+  margin-left: 10px;
+}
+
+html body footer #message form input[type=text] {
+  width: 300px;
+  margin: 5px;
+}
+
+html body footer #message form textarea {
+  resize: none;
+}
+
+html body footer #message form button {
+  color: white;
+  background-color: black;
+  border: none;
+  font-size: 13px;
+  padding: 20px;
+  padding: 3px;
+}
+
+html body footer #copy {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: copy;
+  border: dotted 1px black;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  font-size: 80%;
+  color: gray;
 }
 /*# sourceMappingURL=style.css.map */

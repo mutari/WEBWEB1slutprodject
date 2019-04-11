@@ -1,2 +1,26 @@
 footer
-    h1 footre
+    #kontakt
+        h1 Kontakt uppgifter
+        p address
+        p gatunumer
+        p något mera
+        h3 tel:
+        p 070-000 11 33
+        h5 teltider
+        p.tider mån-lör 8-18
+        p.tider sön stängt
+    #message
+        h1 Skicka ett medelande
+        form 
+            label(for="email") From
+            br
+            input(type="text" name="email")
+            br
+            label(for="ämne") Subjct
+            br
+            input(type="text" name="ämne") 
+            br
+            textarea(name="", cols="50", rows="7")
+            br
+            button(type="submit") send
+    p#copy ©philip johansson
