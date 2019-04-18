@@ -47,12 +47,23 @@ html {
 
             #stars {
                 grid-area: stars;
+                width: 225px;
+                height: 30px;
+                margin: 20px 0 20px 0;
+                
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
 
-                img {
-                    margin: 20px 0 20px 0;
-                    width: 225px;
-                    height: 30px;
-                    border: solid 1px black;
+                    li {
+
+                        float: left;
+                        padding: 0;
+                        margin-left: 1px;
+
+                    }
+
                 }
                 
             }
@@ -83,7 +94,6 @@ html {
         //bildespel överst på sidan
         #image {
             grid-area: "image";
-            border: solid 1px black;
         }
 
         main {
@@ -104,24 +114,27 @@ html {
 
             #kontakt {
                 grid-area: kontakt;
-                border: solid 1px black;
                 padding: 10px;
 
-                h1 {
-                    font-size: 140%;
-                }
-                p, h5 {
-                    margin-left: 10px;
-                }
+                div {
+                    width: 190px;
+                    margin: auto;
 
-                .tider {
-                    margin-left: 20px;
+                    h1 {
+                        font-size: 140%;
+                    }
+                    p, h5 {
+                        margin-left: 10px;
+                    }
+    
+                    .tider {
+                        margin-left: 20px;
+                    }
                 }
             }
 
             #message {
                 grid-area: message;
-                border: solid 1px black;
                 padding: 10px 40px 10px 40px;
 
                 h1 {
