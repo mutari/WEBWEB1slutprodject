@@ -12,16 +12,16 @@ footer
             p.tider sön stängt
     #message
         h1 Skicka ett medelande
-        form 
-            label(for="email") From
+        form(method="post" action="formmail.php")
+            label(for="email") från
             br
-            input(type="text" name="email")
+            input(type="text" name="email" placeholder="test@yahoo.com")
             br
-            label(for="ämne") Subjct
+            label(for="subject") ämne
             br
-            input(type="text" name="ämne") 
+            input(type="text" name="subject") 
             br
-            textarea(name="", cols="50", rows="7")
+            textarea(name="message", cols="50", rows="7")
             br
-            button(type="submit") send
+            button(type="submit") skicka
     p#copy ©philip johansson

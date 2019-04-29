@@ -4,9 +4,8 @@
 }
 
 html body {
-  width: 1200px;
+  width: 100%;
   margin: auto;
-  border: solid 1px black;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
@@ -27,9 +26,9 @@ html body header {
       grid-template-areas: "logo stars . meny";
   position: -webkit-sticky;
   position: sticky;
+  z-index: 10;
   top: 0;
   background-color: white;
-  border: solid 1px black;
 }
 
 html body header #logo {
@@ -51,7 +50,7 @@ html body header #stars {
   grid-area: stars;
   width: 225px;
   height: 30px;
-  margin: 20px 0 20px 0;
+  margin: 10px 0 10px 0;
 }
 
 html body header #stars ul {
@@ -63,6 +62,7 @@ html body header #stars ul {
 html body header #stars ul li {
   float: left;
   padding: 0;
+  margin: 0;
   margin-left: 1px;
 }
 
@@ -94,7 +94,73 @@ html body #image {
 
 html body main {
   grid-area: "main";
-  border: solid 1px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 220px 200px 300px;
+      grid-template-rows: 220px 200px 300px;
+      grid-template-areas: "valkomen" "Dbuffes" ".";
+}
+
+html body main #valkomen {
+  grid-area: "valkomen";
+}
+
+html body main #valkomen #valkomenInfo {
+  width: 300px;
+  padding: 30px;
+  padding-left: 60px;
+  float: left;
+}
+
+html body main #valkomen #valkomenInfo h1 {
+  margin-bottom: 10px;
+}
+
+html body main #valkomen #valkomenInfo p {
+  margin-left: 10px;
+}
+
+html body main #valkomen img {
+  width: 640px;
+  height: 180px;
+  float: right;
+  margin: 20px;
+}
+
+html body main #DifrentBuffes {
+  grid-area: "Dbuffes";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+}
+
+html body main .buffedisplay {
+  position: relative;
+}
+
+html body main .buffedisplay img {
+  -webkit-box-shadow: 0px 0px 10px grey;
+          box-shadow: 0px 0px 10px grey;
+}
+
+html body main .buffedisplay .textDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25px;
+  width: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  top: 95%;
 }
 
 html body footer {
@@ -181,5 +247,25 @@ html body footer #copy {
   margin: auto;
   font-size: 80%;
   color: gray;
+}
+
+html .orange {
+  border: solid 2px #d69a22;
+  background-color: #fee6ce;
+}
+
+html .red {
+  border: solid 2px #b65553;
+  background-color: #f7cecd;
+}
+
+html .green {
+  border: solid 2px #83b269;
+  background-color: #d6e8d5;
+}
+
+html .blue {
+  border: solid 2px #6d8fbd;
+  background-color: #dbe8fb;
 }
 /*# sourceMappingURL=style.css.map */

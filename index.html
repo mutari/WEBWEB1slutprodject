@@ -28,7 +28,38 @@
     <div id="image"><img src="images/bannerImage1.jpg" height="100%" width="100%"></div>
     <!-- main inehåller allt sidans inehål-->
     <main>
-      <h1>main </h1>
+      <div id="valkomen">
+        <div id="valkomenInfo">
+          <h1>Välkommen</h1>
+          <p>
+            välkomen till [företags namn] Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua.
+          </p>
+        </div><img src="images/Welcome.jpg" width="100%" hight="100%">
+      </div>
+      <div id="DifrentBuffes">
+        <div class="buffedisplay"><img src="images/buffe1.jpg">
+          <div class="orange textDisplay">
+            <p>smörgos buffe</p>
+          </div>
+        </div>
+        <div class="buffedisplay"><img src="images/buffe2.jpg">
+          <div class="red textDisplay">
+            <p>kall skuret</p>
+          </div>
+        </div>
+        <div class="buffedisplay"><img src="images/buffe3.jpg">
+          <div class="green textDisplay">
+            <p>vego buffe</p>
+          </div>
+        </div>
+        <div class="buffedisplay"><img src="images/buffe4.jpg">
+          <div class="blue textDisplay">
+            <p>tapas</p>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- footer inehåler kontakt uppgifter och ett mail formolär-->
     <footer>
@@ -47,13 +78,13 @@
       </div>
       <div id="message">
         <h1>Skicka ett medelande</h1>
-        <form> 
-          <label for="email">From</label><br>
-          <input type="text" name="email"><br>
-          <label for="ämne">Subjct</label><br>
-          <input type="text" name="ämne"><br>
-          <textarea name="" cols="50" rows="7"></textarea><br>
-          <button type="submit">send</button>
+        <form method="post" action="formmail.php">
+          <label for="email">från</label><br>
+          <input type="text" name="email" placeholder="test@yahoo.com"><br>
+          <label for="subject">ämne</label><br>
+          <input type="text" name="subject"><br>
+          <textarea name="message" cols="50" rows="7"></textarea><br>
+          <button type="submit">skicka</button>
         </form>
       </div>
       <p id="copy">©philip johansson</p>

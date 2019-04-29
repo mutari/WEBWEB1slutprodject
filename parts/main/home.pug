@@ -1,0 +1,18 @@
+main
+    #valkomen
+        #valkomenInfo
+            h1 Välkommen
+            p.
+                välkomen till [företags namn] Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua.
+        img(src="images/Welcome.jpg" width="100%" hight="100%")
+    #DifrentBuffes
+        - var Buffes = [ {name: "smörgos buffe", color: "orange", src: "images/buffe1.jpg"}, {name: "kall skuret", color: "red", src: "images/buffe2.jpg"}, {name: "vego buffe", color: "green", src: "images/buffe3.jpg"}, {name: "tapas", color: "blue", src: "images/buffe4.jpg"} ];
+        - for(var i = 0; i < 4; i++)
+            div(class='buffedisplay')
+                img(src=Buffes[i].src)
+                div(class=Buffes[i].color + ' textDisplay')
+                    p=Buffes[i].name
+        
+
