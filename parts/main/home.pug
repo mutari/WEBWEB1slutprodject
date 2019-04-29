@@ -10,9 +10,18 @@ main
     #DifrentBuffes
         - var Buffes = [ {name: "smörgos buffe", color: "orange", src: "images/buffe1.jpg"}, {name: "kall skuret", color: "red", src: "images/buffe2.jpg"}, {name: "vego buffe", color: "green", src: "images/buffe3.jpg"}, {name: "tapas", color: "blue", src: "images/buffe4.jpg"} ];
         - for(var i = 0; i < 4; i++)
-            div(class='buffedisplay')
+            .display
                 img(src=Buffes[i].src)
                 div(class=Buffes[i].color + ' textDisplay')
                     p=Buffes[i].name
-        
+    #PartyInfo
+        .display
+            img(src="images/party.jpg")
+            div(class="blue textDisplay")
+                p Event
+        #Info
+            h1 Fest? Vi fixar!
+            p.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. um fugiat quo voluptas nulla pariatur?
+
 

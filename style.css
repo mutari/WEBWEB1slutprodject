@@ -90,15 +90,17 @@ html body header ul li a:hover {
 
 html body #image {
   grid-area: "image";
+  -webkit-box-shadow: 0px 5px 10px gray;
+          box-shadow: 0px 5px 10px gray;
 }
 
 html body main {
   grid-area: "main";
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 220px 200px 300px;
-      grid-template-rows: 220px 200px 300px;
-      grid-template-areas: "valkomen" "Dbuffes" ".";
+  -ms-grid-rows: 220px 200px 400px;
+      grid-template-rows: 220px 200px 400px;
+      grid-template-areas: "valkomen" "Dbuffes" "event";
 }
 
 html body main #valkomen {
@@ -135,18 +137,35 @@ html body main #DifrentBuffes {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-html body main .buffedisplay {
+html body main #PartyInfo {
+  grid-area: "event";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 40px;
+}
+
+html body main #PartyInfo #Info {
+  width: 50%;
+  padding: 10px;
+}
+
+html body main .display {
   position: relative;
 }
 
-html body main .buffedisplay img {
+html body main .display img {
   -webkit-box-shadow: 0px 0px 10px grey;
           box-shadow: 0px 0px 10px grey;
 }
 
-html body main .buffedisplay .textDisplay {
+html body main .display .textDisplay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,7 +179,7 @@ html body main .buffedisplay .textDisplay {
           align-items: center;
   position: absolute;
   left: 0;
-  top: 95%;
+  top: 75%;
 }
 
 html body footer {
