@@ -1,0 +1,170 @@
+@charset "UTF-8";
+main .display {
+  position: relative;
+  color: black;
+}
+
+main .display img {
+  -webkit-box-shadow: 0px 0px 10px grey;
+          box-shadow: 0px 0px 10px grey;
+}
+
+main .display:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+main .textDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25px;
+  width: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  top: 75%;
+}
+
+#mainHome {
+  grid-area: "main";
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 220px 200px 400px;
+      grid-template-rows: 220px 200px 400px;
+      grid-template-areas: "valkomen" "Dbuffes" "event";
+}
+
+#mainHome #valkomen {
+  grid-area: "valkomen";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#mainHome #valkomen #valkomenInfo {
+  width: 300px;
+  padding: 30px;
+  padding-left: 60px;
+  float: left;
+}
+
+#mainHome #valkomen #valkomenInfo h1 {
+  margin-bottom: 10px;
+}
+
+#mainHome #valkomen #valkomenInfo p {
+  margin-left: 10px;
+}
+
+#mainHome #valkomen img {
+  width: 640px;
+  height: 180px;
+  float: right;
+  margin: 20px;
+  -webkit-box-shadow: 0px 0px 10px grey;
+          box-shadow: 0px 0px 10px grey;
+}
+
+#mainHome #DifrentBuffes {
+  grid-area: "Dbuffes";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+#mainHome #PartyInfo {
+  grid-area: "event";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 40px;
+}
+
+#mainHome #PartyInfo #Info {
+  width: 50%;
+  padding: 10px;
+}
+
+#mainHome #PartyInfo #Info p {
+  padding: 10px;
+}
+
+#mainMat {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "MenyBuffer MenyRätter MenyDrinks";
+}
+
+#mainMat #MenyBuffer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: MenyBuffer;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#mainMat #MenyBuffer h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#mainMat #MenyBuffer .menyItem {
+  padding-top: 50px;
+  margin-bottom: 20px;
+  text-align: left;
+  position: relative;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  border-left: solid 1px;
+}
+
+#mainMat #MenyBuffer .menyItem .textDisplay {
+  top: 10px;
+}
+
+#mainMat #MenyBuffer .menyItem p {
+  font-size: 16px;
+  padding: 4px 0 4px 0;
+}
+
+#mainMat #MenyBuffer .menyItem h5 {
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+#mainMat #MenyRatter {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: MenyRätter;
+  border: solid 1px;
+}
+
+#mainMat #MenyDrinks {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: MenyDrinks;
+  border: solid 1px;
+}
+/*# sourceMappingURL=styleMain.css.map */

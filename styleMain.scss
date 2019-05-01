@@ -1,0 +1,164 @@
+//samma för alla
+main {
+
+    //bilder med label på
+    .display {
+        position: relative;
+        color: black;
+        
+        img {
+            box-shadow: 0px 0px 10px grey;
+        }
+
+        &:hover {
+
+            transform: scale(1.2);
+
+        }
+
+    }
+
+    .textDisplay {
+        display: flex;
+        height: 25px;
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 75%;
+    }
+
+}
+
+//huvud sidan
+#mainHome {
+    grid-area: "main";
+    display: grid;
+    grid-template-rows: 220px 200px 400px;
+    grid-template-areas: "valkomen"
+                         "Dbuffes"
+                         "event";
+    
+    #valkomen {
+        grid-area: "valkomen";
+        display: flex;
+        justify-content: space-around;
+        //välkoms texten
+        #valkomenInfo {
+            width: 300px;
+            padding: 30px;
+            padding-left: 60px;
+            float: left;
+
+            h1 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-left: 10px;
+            }
+
+        }
+        //välkoms bilden 
+        img {
+            width: 640px;
+            height: 180px;
+            float: right;
+            margin: 20px;
+            box-shadow: 0px 0px 10px grey;
+        }
+
+    }
+    //buffe priviu
+    #DifrentBuffes {
+        grid-area: "Dbuffes";
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    #PartyInfo {
+        grid-area: "event";
+        display: flex;
+        justify-content: space-around;
+
+        padding-top: 40px;
+
+        #Info {
+            width: 50%;
+            padding: 10px;
+            
+            p {
+                padding: 10px;                        
+            }
+
+        }
+
+    }
+
+}
+
+// mat sida
+#mainMat {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "MenyBuffer MenyRätter MenyDrinks";
+
+    #MenyBuffer {
+        grid-area: MenyBuffer;
+        padding: 20px;
+
+        display: flex;
+        justify-content: space-around;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menyItem {
+            padding-top: 50px;
+            margin-bottom: 20px;
+            text-align: left;
+            position: relative;
+            justify-content: left;
+            border-left: solid 1px;
+            
+            .textDisplay {
+                top: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                padding: 4px 0 4px 0;
+            }
+
+            h5 {
+                padding-top: 5px;
+                font-size: 18px;
+            }
+
+        }
+
+    }
+
+    #MenyRatter {
+        grid-area: MenyRätter;
+
+        border: solid 1px;
+
+    }
+
+    #MenyDrinks {
+        grid-area: MenyDrinks;
+
+        border: solid 1px;
+
+    }
+
+}
+

@@ -16,6 +16,7 @@ html body {
 }
 
 html body header {
+  background-color: white;
   grid-area: "header";
   display: -ms-grid;
   display: grid;
@@ -28,7 +29,6 @@ html body header {
   position: sticky;
   z-index: 10;
   top: 0;
-  background-color: white;
 }
 
 html body header #logo {
@@ -94,97 +94,9 @@ html body #image {
           box-shadow: 0px 5px 10px gray;
 }
 
-html body main {
-  grid-area: "main";
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 220px 200px 400px;
-      grid-template-rows: 220px 200px 400px;
-      grid-template-areas: "valkomen" "Dbuffes" "event";
-}
-
-html body main #valkomen {
-  grid-area: "valkomen";
-}
-
-html body main #valkomen #valkomenInfo {
-  width: 300px;
-  padding: 30px;
-  padding-left: 60px;
-  float: left;
-}
-
-html body main #valkomen #valkomenInfo h1 {
-  margin-bottom: 10px;
-}
-
-html body main #valkomen #valkomenInfo p {
-  margin-left: 10px;
-}
-
-html body main #valkomen img {
-  width: 640px;
-  height: 180px;
-  float: right;
-  margin: 20px;
-}
-
-html body main #DifrentBuffes {
-  grid-area: "Dbuffes";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-html body main #PartyInfo {
-  grid-area: "event";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding-top: 40px;
-}
-
-html body main #PartyInfo #Info {
-  width: 50%;
-  padding: 10px;
-}
-
-html body main .display {
-  position: relative;
-}
-
-html body main .display img {
-  -webkit-box-shadow: 0px 0px 10px grey;
-          box-shadow: 0px 0px 10px grey;
-}
-
-html body main .display .textDisplay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 25px;
-  width: 100px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  left: 0;
-  top: 75%;
-}
-
 html body footer {
   grid-area: "footer";
-  border: solid 1px black;
+  border-top: double 4px black;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
