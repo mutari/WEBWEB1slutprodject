@@ -1,0 +1,66 @@
+main#mainOrder
+    script.
+        var ActiveOrder = getActiveOrder();
+
+        var main = document.getElementById("mainOrder");
+        
+        //skapar documentet efter hur det specifika orden ser ut
+        //jag hade gärna använt en tempel engin men det hade krävt att jag skapade en server samtidigt och då inte kursen inehåller detta la jag inte ner tid på det
+        var upperDiv = document.createElement('div');
+        upperDiv.classList.add(ActiveOrder.color);
+        upperDiv.id = "upperDiv";
+
+        var title = document.createElement('h1');
+        title.innerHTML = ActiveOrder.name;
+
+        var p = document.createElement('p');
+        p.innerHTML = ActiveOrder.about;
+
+        var pHave = document.createElement('p');
+        pHave.innerHTML = ActiveOrder.have;
+
+        var pPrise = document.createElement('p');
+        pPrise.innerHTML = ActiveOrder.prisePers + '/per person'
+
+        var pMax = document.createElement('p');
+        pMax.innerHTML = 'max antal personer: ' + ActiveOrder.maxPers 
+
+        upperDiv.appendChild(title);
+        upperDiv.appendChild(p);
+        upperDiv.appendChild(pHave);
+        upperDiv.appendChild(pPrise);
+        upperDiv.appendChild(pMax);
+
+        //skapar en form för att ta emot bestälningen av användaren
+        var form = document.createElement('form');
+
+        var labelHMP = document.createElement('label'); //Hur många portioner
+        labelHMP.setAttribute("for", "antal");
+        labelHMP.innerHTML = "Antal portioner:";
+
+        var inputAP = document.createElement('input'); //antal portioner
+        inputAP.setAttribute("type", "number");
+        inputAP.setAttribute("name", "antal");
+        inputAP.setAttribute("min", "1");
+        inputAP.setAttribute("max", ActiveOrder.maxPers.toString());
+        inputAP.setAttribute("value", 1);
+        inputAP.setAttribute("onchange", "priseUppdate();");
+
+        var pTotalPrise = document.createElement('p');
+        pTotalPrise.innerHTML = "/max " + ActiveOrder.maxPers + "<br>" + inputAP.value * ActiveOrder.prisePers + "kr";
+
+        form.appendChild(labelHMP);
+        form.appendChild(inputAP);
+        form.appendChild(pTotalPrise);
+
+        main.appendChild(upperDiv);
+        main.appendChild(form);
+
+        function priseUppdate() {
+            var value = inputAP.value;
+
+            if(value > ActiveOrder.maxPers) {
+                inputAP.value = ActiveOrder.maxPars.toString();
+            }
+            pTotalPrise.innerHTML = "/max " + ActiveOrder.maxPers + "<br>" + inputAP.value * ActiveOrder.prisePers + "kr";
+        }

@@ -107,16 +107,14 @@ main .textDisplay {
 #mainMat {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-areas: "MenyBuffer MenyRätter MenyDrinks";
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 20px 1fr 20px;
+      grid-template-rows: 20px 1fr 20px;
+      grid-template-areas: ". . ." "MenyBuffer MenyRätter MenyDrinks" ". . .";
 }
 
-#mainMat #MenyBuffer {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: MenyBuffer;
-  padding: 20px;
+#mainMat .Meny {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,13 +122,13 @@ main .textDisplay {
       justify-content: space-around;
 }
 
-#mainMat #MenyBuffer h1 {
+#mainMat .Meny h1 {
   text-align: center;
-  margin-bottom: 20px;
 }
 
-#mainMat #MenyBuffer .menyItem {
+#mainMat .menyItem {
   padding-top: 50px;
+  padding-bottom: 15px;
   margin-bottom: 20px;
   text-align: left;
   position: relative;
@@ -140,31 +138,82 @@ main .textDisplay {
   border-left: solid 1px;
 }
 
-#mainMat #MenyBuffer .menyItem .textDisplay {
+#mainMat .menyItem .textDisplay {
   top: 10px;
 }
 
-#mainMat #MenyBuffer .menyItem p {
+#mainMat .menyItem p {
   font-size: 16px;
   padding: 4px 0 4px 0;
 }
 
-#mainMat #MenyBuffer .menyItem h5 {
+#mainMat .menyItem h5 {
   padding-top: 5px;
   font-size: 18px;
 }
 
+#mainMat .menyItem button {
+  margin: 0;
+  padding: 4px;
+  font-weight: bold;
+}
+
+#mainMat .menyItem button:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#mainMat .menyItem button:focus {
+  outline: 0;
+}
+
+#mainMat #MenyBuffer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: MenyBuffer;
+}
+
 #mainMat #MenyRatter {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: MenyRätter;
   border: solid 1px;
 }
 
 #mainMat #MenyDrinks {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: MenyDrinks;
   border: solid 1px;
+}
+
+#mainOrder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+#mainOrder #upperDiv {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+}
+
+#mainOrder form {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  border: solid 1px;
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+}
+
+#mainOrder form input {
+  outline: 0;
 }
 /*# sourceMappingURL=styleMain.css.map */

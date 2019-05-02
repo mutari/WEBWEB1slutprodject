@@ -1,8 +1,4 @@
-main#mainMat
-    
-    //-meny data
-    -
-        var BuffeList = 
+var BuffeList = 
             [ 
                 {
                     color: "green",
@@ -33,20 +29,12 @@ main#mainMat
                 }
             ];
 
-    //buffe meny alla buffer man kan beställa
-    #MenyBuffer(class="Meny")
-        h1 Buffeer
-            each item in BuffeList
-                .menyItem
-                    div(class="textDisplay " + item.color)
-                        p=item.name
-                    p=item.about
-                    p!=item.have
-                    h5=item.prisePers + "/pars  max:" + item.maxPers
-                    button(class=item.color onclick="order(" + item.id +")") beställ
-    
-    #MenyRatter(class="Meny")
-        h1 Rätter
 
-    #MenyDrinks(class="Meny")
-        h1 Drika
+
+
+
+
+
+
+
+var get = (id) => { return BuffeList.filter(e => { return e.id === id; })[0]; }

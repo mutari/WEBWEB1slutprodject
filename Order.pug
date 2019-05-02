@@ -1,7 +1,10 @@
 doctype html
-html(leng=sv)
+html(lang=sv)
     head
         include parts/head.pug
+
+        //när sidan öpnas kollar jag vilket objeckt man ska beställa
+
     body
         // header element inehåller en meny samt logo bild
         //- include laddar header.pug filen i från mapen parts
@@ -14,7 +17,7 @@ html(leng=sv)
 
         // main inehåller allt sidans inehål
         //- main är det änds som skiljer alla sider ifrån varandra
-        include parts/main/HyraUtrustningMain.pug
+        include parts/main/OrderMain.pug
 
 
         // footer inehåler kontakt uppgifter och ett mail formolär

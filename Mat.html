@@ -4,6 +4,8 @@
     <title>catering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleMain.css">
+    <script src="javascript/BuffeList.js"></script>
+    <script src="javascript/order.js"></script>
   </head>
   <body>
     <!-- header element inehåller en meny samt logo bild-->
@@ -20,7 +22,6 @@
       </div>
       <ul>
         <li><a href="OmOss.html">Om oss</a></li>
-        <li><a href="HyraUtrustning.html">Hyra Utrustning</a></li>
         <li><a href="Event.html">Event</a></li>
         <li><a href="Mat.html">Mat</a></li>
       </ul>
@@ -33,20 +34,31 @@
       <div class="Meny" id="MenyBuffer">
         <h1>Buffeer
           <div class="menyItem">
-            <div class="green textDisplay">
+            <div class="textDisplay green">
               <p>Grill Buffe</p>
             </div>
             <p>Denna buffe består av blandane grillade rätter.</p>
             <p>kykling spätt lätt grilade<br>oxfele(väljs själv hur grilad)<br>potatis gratäng<br>bea</p>
             <h5>220/pars  max:25</h5>
+            <button class="green" onclick="order(1)">beställ</button>
           </div>
           <div class="menyItem">
-            <div class="green textDisplay">
+            <div class="textDisplay blue">
               <p>Vego Buffe</p>
             </div>
             <p>Denna buffen är perfekt för vegitarianen.</p>
             <p>grönsaker<br>falafel<br>bönsalad<br>vock<br></p>
             <h5>150/pars  max:40</h5>
+            <button class="blue" onclick="order(2)">beställ</button>
+          </div>
+          <div class="menyItem">
+            <div class="textDisplay red">
+              <p>Frukost buffe</p>
+            </div>
+            <p>Denna buffen är perfekt för vegitarianen.</p>
+            <p>grönsaker<br>falafel<br>bönsalad<br>vock<br></p>
+            <h5>150/pars  max:40</h5>
+            <button class="red" onclick="order(3)">beställ</button>
           </div>
         </h1>
       </div>
