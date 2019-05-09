@@ -209,7 +209,6 @@ main .textDisplay {
 }
 
 #mainOrder div {
-  display: inline-block;
   border: solid 1px;
   padding: 20px;
 }
@@ -266,5 +265,66 @@ main .textDisplay {
 
 #mainOrder div table .Vara {
   width: 200px;
+}
+
+#mainOrder div #infoAboutBuyer {
+  margin-top: 30px;
+  border: solid 1px;
+}
+
+#mainOrder div #betala {
+  margin-top: 20px;
+  padding: 10px;
+  border-color: black;
+}
+
+#mainOrder div #betala legend {
+  text-decoration: underline;
+}
+
+#mainOrder div #betala form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#mainOrder div #betala form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3px;
+  border: none;
+}
+
+#mainOrder div #betala form input[type="number"] {
+  width: 15px;
+}
+
+#mainOrder div #betala form input[type="number"]::-webkit-inner-spin-button, #mainOrder div #betala form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  outline: 0;
+}
+
+#mainOrder div #betala form input[name="CSC"] {
+  width: 22px;
+  overflow: hidden;
+}
+
+#mainOrder div #betala form button {
+  border: none;
+  background: none;
+  outline: 0;
+}
+
+#mainOrder div #betala form button:active {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 /*# sourceMappingURL=styleMain.css.map */

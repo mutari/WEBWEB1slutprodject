@@ -25,9 +25,8 @@ function addOrder(id, type) {
     alert(OBJ.name + " added to cart");
 }
 
-function order(id) {
-    window.localStorage.setItem("ActiveOBJ", JSON.stringify(getBuffe(id)));
-    window.location.href = window.location.href.substr(0, window.location.href.length-9) + "/Order.html";
+function buy() {
+    alert("tackar för dit köp")
 }
 
 var getActiveOrder = () => { return JSON.parse(window.localStorage.getItem("ActiveOBJ")); }

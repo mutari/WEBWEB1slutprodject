@@ -198,7 +198,7 @@ main {
 
     div {
 
-        display: inline-block;
+        //display: inline-block;
         border: solid 1px;
         padding: 20px;
 
@@ -259,6 +259,67 @@ main {
             }
     
         }
+
+        #infoAboutBuyer {
+
+            margin-top: 30px;
+            border: solid 1px;
+
+        }
+
+        #betala {
+            margin-top: 20px;
+            padding: 10px;
+            border-color: black;
+
+            legend {
+                text-decoration: underline;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    padding: 3px;
+                    border: none;
+                }
+
+                input {
+
+                    &[type="number"] {
+                        width: 15px;
+    
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            outline: 0;
+                        }
+    
+                    }
+
+                    &[name="CSC"] {
+                        width: 22px;
+                        overflow: hidden;
+                    }   
+    
+                }
+                button {
+                    border: none;
+                    background: none;
+                    outline: 0;
+
+                    &:active {
+                        transform: scale(1.5);
+                    }
+
+                }
+    
+            }
+        }
+
     }
 
 }

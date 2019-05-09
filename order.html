@@ -66,6 +66,34 @@
             </tr>
           </tfoot>
         </table>
+        <div id="infoAboutBuyer">  </div>
+        <fieldset id="betala">
+          <legend>KortBetalning</legend>
+          <form>
+            <div>
+              <label for="korttyp">Kort typ: </label>
+              <select name="korttyp">
+                <option value="Mastercard">Mastercard</option>
+                <option value="Kreditkort">Kreditkort</option>
+              </select>
+            </div>
+            <div>
+              <label for="kortnummer">Kortnummer:</label>
+              <input type="text" name="kortunmmer">
+            </div>
+            <div>
+              <label for="datum">Datum:</label>
+              <input type="number" name="moth" max="99" min="00">
+              <label for="year">/</label>
+              <input type="number" name="year" max="99" min="00">
+            </div>
+            <div>
+              <label for="CSC">3 sista: </label>
+              <input type="text" name="CSC" max="999" min="000">
+            </div>
+            <button onclick="buy();"><img src="images/shopping-cart.png" width="16" hight="16"></button>
+          </form>
+        </fieldset>
       </div>
       <script>
         var app = new Vue({
