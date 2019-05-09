@@ -111,6 +111,10 @@ main {
                             "MenyBuffer MenyRätter MenyDrinks"
                             ". . .";
 
+    label {
+        font-size: 16px;
+    }
+
     //samma för alla menyer
     .Meny {
         display: flex;
@@ -162,6 +166,11 @@ main {
     //meny med buffer
     #MenyBuffer {
         grid-area: MenyBuffer;
+
+        input[type=number] {
+            width: 25px;
+        }
+
     }
 
     #MenyRatter {
@@ -181,28 +190,75 @@ main {
 }
 
 #mainOrder {
+
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0 5px 0;
 
-    #upperDiv {
-        flex: 2;
+    div {
+
         display: inline-block;
-        padding: 20px;
-        margin: 10px;
-    }
-
-    form {
-        flex: 2;
         border: solid 1px;
-        display: inline-block;
         padding: 20px;
-        margin: 10px;
 
-        input {
-            outline: 0;
+        table {
+            border-collapse: collapse;
+            
+            caption {
+                text-align: left;
+                font-size: 20px;
+                font-weight: 700;
+                padding: 10px;
+            }
+        
+            th {
+                text-align: left;
+                border-bottom: solid 1px gray;
+            }
+        
+            tfoot td {
+                text-align: left;
+                border-bottom: solid 1px gray;
+                border-top: solid 1px gray;
+            }
+
+            td button {
+                border: none;
+                outline: 0;
+
+                img {
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+
+                    &:active {
+                        transform: scale(1.6);
+                    }
+
+                }
+
+            }
+        
+            .Summa {
+                text-align: right;
+                width: 100px;
+            }
+        
+            .Pris {
+                width: 50px
+            }
+        
+            .Antal {
+                width: 50px;
+            }
+        
+            .Vara {
+                width: 200px;
+            }
+    
         }
-
     }
-
-    text-align: center;
 
 }

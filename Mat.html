@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html leng="sv">
   <head>
     <title>catering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleMain.css">
     <script src="javascript/BuffeList.js"></script>
     <script src="javascript/order.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
     <!-- header element inehåller en meny samt logo bild-->
@@ -21,6 +22,7 @@
         </ul>
       </div>
       <ul>
+        <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
         <li><a href="OmOss.html">Om oss</a></li>
         <li><a href="Event.html">Event</a></li>
         <li><a href="Mat.html">Mat</a></li>
@@ -39,8 +41,10 @@
             </div>
             <p>Denna buffe består av blandane grillade rätter.</p>
             <p>kykling spätt lätt grilade<br>oxfele(väljs själv hur grilad)<br>potatis gratäng<br>bea</p>
-            <h5>220/pars  max:25</h5>
-            <button class="green" onclick="order(1)">beställ</button>
+            <h5>220/pars</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput" type="number" name="antal">
+            <button class="green" onclick="addOrder(1, 1)">add to cart</button>
           </div>
           <div class="menyItem">
             <div class="textDisplay blue">
@@ -48,8 +52,10 @@
             </div>
             <p>Denna buffen är perfekt för vegitarianen.</p>
             <p>grönsaker<br>falafel<br>bönsalad<br>vock<br></p>
-            <h5>150/pars  max:40</h5>
-            <button class="blue" onclick="order(2)">beställ</button>
+            <h5>150/pars</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput" type="number" name="antal">
+            <button class="blue" onclick="addOrder(2, 1)">add to cart</button>
           </div>
           <div class="menyItem">
             <div class="textDisplay red">
@@ -57,8 +63,10 @@
             </div>
             <p>Denna buffen är perfekt för vegitarianen.</p>
             <p>grönsaker<br>falafel<br>bönsalad<br>vock<br></p>
-            <h5>150/pars  max:40</h5>
-            <button class="red" onclick="order(3)">beställ</button>
+            <h5>150/pars</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput" type="number" name="antal">
+            <button class="red" onclick="addOrder(3, 1)">add to cart</button>
           </div>
         </h1>
       </div>

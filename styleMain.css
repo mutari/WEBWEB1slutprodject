@@ -114,6 +114,10 @@ main .textDisplay {
       grid-template-areas: ". . ." "MenyBuffer MenyRätter MenyDrinks" ". . .";
 }
 
+#mainMat label {
+  font-size: 16px;
+}
+
 #mainMat .Meny {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -173,6 +177,10 @@ main .textDisplay {
   grid-area: MenyBuffer;
 }
 
+#mainMat #MenyBuffer input[type=number] {
+  width: 25px;
+}
+
 #mainMat #MenyRatter {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -191,29 +199,72 @@ main .textDisplay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0 5px 0;
 }
 
-#mainOrder #upperDiv {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+#mainOrder div {
   display: inline-block;
-  padding: 20px;
-  margin: 10px;
-}
-
-#mainOrder form {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
   border: solid 1px;
-  display: inline-block;
   padding: 20px;
-  margin: 10px;
 }
 
-#mainOrder form input {
+#mainOrder div table {
+  border-collapse: collapse;
+}
+
+#mainOrder div table caption {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+#mainOrder div table th {
+  text-align: left;
+  border-bottom: solid 1px gray;
+}
+
+#mainOrder div table tfoot td {
+  text-align: left;
+  border-bottom: solid 1px gray;
+  border-top: solid 1px gray;
+}
+
+#mainOrder div table td button {
+  border: none;
   outline: 0;
+}
+
+#mainOrder div table td button img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#mainOrder div table td button img:active {
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+
+#mainOrder div table .Summa {
+  text-align: right;
+  width: 100px;
+}
+
+#mainOrder div table .Pris {
+  width: 50px;
+}
+
+#mainOrder div table .Antal {
+  width: 50px;
+}
+
+#mainOrder div table .Vara {
+  width: 200px;
 }
 /*# sourceMappingURL=styleMain.css.map */

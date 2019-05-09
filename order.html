@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
   <head>
     <title>catering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleMain.css">
     <script src="javascript/BuffeList.js"></script>
     <script src="javascript/order.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--när sidan öpnas kollar jag vilket objeckt man ska beställa-->
   </head>
   <body>
@@ -22,6 +23,7 @@
         </ul>
       </div>
       <ul>
+        <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
         <li><a href="OmOss.html">Om oss</a></li>
         <li><a href="Event.html">Event</a></li>
         <li><a href="Mat.html">Mat</a></li>
@@ -31,71 +33,73 @@
     <div id="image"><img src="images/bannerImage1.jpg" height="100%" width="100%"></div>
     <!-- main inehåller allt sidans inehål-->
     <main id="mainOrder">
+      <div>
+        <table>
+          <caption class="red">Varukorg</caption>
+          <thead>
+            <tr>
+              <th></th>
+              <th class="Vara">Vara</th>
+              <th class="Antal">Antal</th>
+              <th class="Pris">Pris</th>
+              <th class="Summa">summa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="items in orders">
+              <td> 
+                <button v-on:click="Delete(items.id)"><img src="images/del.png" width="16px" hight="16px"></button>
+              </td>
+              <td class="Vara">{{ items.name }}</td>
+              <td class="Antal">{{ items.antalPers }}</td>
+              <td class="Pris">{{ items.prise }}</td>
+              <td class="Summa">{{ items.totalPrise }}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="Summa">Totalpris {{ TotalPris() }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
       <script>
-        var ActiveOrder = getActiveOrder();
+        var app = new Vue({
+            el: "#mainOrder",
+            data: {
+                orders: JSON.parse(window.localStorage.getItem("Orders"))
+            },
+            methods: {
+                TotalPris: function() {
+                    var total = 0;
+                    for(var i = 0; i < this.orders.length; i++) {
+                        total += this.orders[i].totalPrise;
+                    }
+                    return total.toString();
+                },
+                Delete: function(id) {
+                    //tar bort den ordern med det specifika id
+                    for(var i = 0; i < this.orders.length; i++) {
+                        if(this.orders[i].id == id) {
+                            this.orders.splice(id, 1);
         
-        var main = document.getElementById("mainOrder");
+                            //gåt i genom alla ordrar och uppdeterar deras id
+                            for(var i = 0; i < this.orders.length; i++) {
+                                this.orders[i].id = i;
+                            }
         
-        //skapar documentet efter hur det specifika orden ser ut
-        //jag hade gärna använt en tempel engin men det hade krävt att jag skapade en server samtidigt och då inte kursen inehåller detta la jag inte ner tid på det
-        var upperDiv = document.createElement('div');
-        upperDiv.classList.add(ActiveOrder.color);
-        upperDiv.id = "upperDiv";
+                            window.localStorage.setItem("Orders", JSON.stringify(this.orders));
         
-        var title = document.createElement('h1');
-        title.innerHTML = ActiveOrder.name;
-        
-        var p = document.createElement('p');
-        p.innerHTML = ActiveOrder.about;
-        
-        var pHave = document.createElement('p');
-        pHave.innerHTML = ActiveOrder.have;
-        
-        var pPrise = document.createElement('p');
-        pPrise.innerHTML = ActiveOrder.prisePers + '/per person'
-        
-        var pMax = document.createElement('p');
-        pMax.innerHTML = 'max antal personer: ' + ActiveOrder.maxPers 
-        
-        upperDiv.appendChild(title);
-        upperDiv.appendChild(p);
-        upperDiv.appendChild(pHave);
-        upperDiv.appendChild(pPrise);
-        upperDiv.appendChild(pMax);
-        
-        //skapar en form för att ta emot bestälningen av användaren
-        var form = document.createElement('form');
-        
-        var labelHMP = document.createElement('label'); //Hur många portioner
-        labelHMP.setAttribute("for", "antal");
-        labelHMP.innerHTML = "Antal portioner:";
-        
-        var inputAP = document.createElement('input'); //antal portioner
-        inputAP.setAttribute("type", "number");
-        inputAP.setAttribute("name", "antal");
-        inputAP.setAttribute("min", "1");
-        inputAP.setAttribute("max", ActiveOrder.maxPers.toString());
-        inputAP.setAttribute("value", 1);
-        inputAP.setAttribute("onchange", "priseUppdate();");
-        
-        var pTotalPrise = document.createElement('p');
-        pTotalPrise.innerHTML = "/max " + ActiveOrder.maxPers + "<br>" + inputAP.value * ActiveOrder.prisePers + "kr";
-        
-        form.appendChild(labelHMP);
-        form.appendChild(inputAP);
-        form.appendChild(pTotalPrise);
-        
-        main.appendChild(upperDiv);
-        main.appendChild(form);
-        
-        function priseUppdate() {
-            var value = inputAP.value;
-        
-            if(value > ActiveOrder.maxPers) {
-                inputAP.value = ActiveOrder.maxPars.toString();
+                            return;
+                        }
+                    }
+                }
             }
-            pTotalPrise.innerHTML = "/max " + ActiveOrder.maxPers + "<br>" + inputAP.value * ActiveOrder.prisePers + "kr";
-        }
+        });
       </script>
     </main>
     <!-- footer inehåler kontakt uppgifter och ett mail formolär-->
