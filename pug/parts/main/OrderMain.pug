@@ -1,0 +1,87 @@
+main#mainOrder
+    div
+        table
+            caption.red Varukorg
+            thead
+                tr
+                    th
+                    th.Vara Vara
+                    th.Antal Antal
+                    th.Pris Pris
+                    th.Summa summa
+            tbody
+                tr(v-for="items in orders")
+                    td 
+                        button(v-on:click="Delete(items.id)")
+                            img(src="images/del.png" width="16px" hight="16px")
+                    td.Vara {{ items.name }}
+                    td.Antal {{ items.antalPers }}
+                    td.Pris {{ items.prise }}
+                    td.Summa {{ items.totalPrise }}
+            tfoot
+                tr
+                    td
+                    td
+                    td
+                    td
+                    td.Summa Totalpris {{ TotalPris() }}
+
+        #infoAboutBuyer   
+
+
+        fieldset#betala
+            legend KortBetalning
+            form
+                div
+                    label(for="korttyp") Kort typ: 
+                    select(name="korttyp")
+                        option(value="Mastercard") Mastercard
+                        option(value="Mastro") Mastro
+                        option(value="Visa") Visa
+                div
+                    label(for="kortnummer") Kortnummer:
+                    input(type="text" name="kortunmmer")
+                div
+                    label(for="datum") Datum:
+                    input(type="number" name="moth" max="99" min="00") 
+                    label(for="year") /
+                    input(type="number" name="year" max="99" min="00")
+                div
+                    label(for="CVI") CVI: 
+                    input(type="text" name="CSC" max="999" min="000")
+                button(onclick="buy();")
+                    img(src="images/shopping-cart.png" width="16" hight="16")
+
+    script.
+        var app = new Vue({
+            el: "#mainOrder",
+            data: {
+                orders: JSON.parse(window.localStorage.getItem("Orders"))
+            },
+            methods: {
+                TotalPris: function() {
+                    var total = 0;
+                    for(var i = 0; i < this.orders.length; i++) {
+                        total += this.orders[i].totalPrise;
+                    }
+                    return total.toString();
+                },
+                Delete: function(id) {
+                    //tar bort den ordern med det specifika id
+                    for(var i = 0; i < this.orders.length; i++) {
+                        if(this.orders[i].id == id) {
+                            this.orders.splice(id, 1);
+
+                            //gåt i genom alla ordrar och uppdeterar deras id
+                            for(var i = 0; i < this.orders.length; i++) {
+                                this.orders[i].id = i;
+                            }
+
+                            window.localStorage.setItem("Orders", JSON.stringify(this.orders));
+
+                            return;
+                        }
+                    }
+                }
+            }
+        });

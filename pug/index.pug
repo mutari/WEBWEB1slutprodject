@@ -1,0 +1,22 @@
+doctype html
+html(leng="sv")
+    head
+        include parts/head.pug
+    body
+        // header element inehåller en meny samt logo bild
+        //- include laddar header.pug filen i från mapen parts
+        include parts/header.pug
+        
+        // image är ett bild spel
+        //- include laddar image.pug i part mapen då dena delen av html är samma i alla htmlfiler
+        include parts/image.pug
+
+
+        // main inehåller allt sidans inehål
+        //- main är det änds som skiljer alla sider ifrån varandra
+        include parts/main/HomeMain.pug
+
+
+        // footer inehåler kontakt uppgifter och ett mail formolär
+        //- laddar in filen footer.pug i från mapen parts
+        include parts/footer.pug

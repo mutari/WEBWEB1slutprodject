@@ -1,0 +1,44 @@
+main#mainOrder
+    #MatDiv(v-bind:class="colorClass")
+        h1 {{ name }}
+        p {{ about }}
+        p(v-html="have")
+        p {{ prisePers }} /per person
+        p max antal personer: {{ maxPers }}
+    form(id="MatForm")
+        h3 Antal portioner
+        br
+        label(for="antal") Antal portioner:
+        input(type="number" name="antal" min="1" :max="maxPers" value="1" onchange="uppdateValue();" v-model="input")
+        label(for="antal") /max {{ maxPers }} <br> {{ totalPrise }} kr
+        br
+        br
+        h3 konto uppgifter
+    script.
+        var ActiveOrder = getActiveOrder();
+
+        var MatDisplai = new Vue({
+            el: '#MatDiv',
+            data: ActiveOrder,
+            computed: {
+                colorClass: function () {
+                    return {
+                        red: ActiveOrder.color == "red" ? true : false,
+                        green: ActiveOrder.color == "green" ? true : false,
+                        blue: ActiveOrder.color == "blue" ? true : false,
+                        orange: ActiveOrder.color == "orange" ? true : false,
+                    }
+                }
+            }
+        });
+
+        var form = new Vue({
+            el: '#MatForm',
+            data: {
+                maxPers: ActiveOrder.maxPers,
+                input: "1",
+                totalPrise: ActiveOrder.prisePers
+            }
+        });
+
+        var uppdateValue = () => { form.$data.totalPrise = form.$data.input * ActiveOrder.prisePers; }

@@ -1,0 +1,76 @@
+main#mainMat
+
+    //buffe meny alla buffer man kan beställa
+    #MenyBuffer(class="Meny")
+        ul
+            li
+                h1 Buffeer
+            li.menyItem(v-for="item in BuffeList")
+                div(class="textDisplay " v-bind:class="item.color")
+                    p {{ item.name }}
+                p {{ item.about }}
+                p(v-html="item.have")
+                h5 {{ item.prisePers }}kr/pars
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput1" value="0" min="0")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+
+    #MenyRatter(class="Meny")
+        ul
+            li
+                h1 Rätter
+            li.menyItem(v-for="item in RettList")
+                div(class="textDisplay " v-bind:class="[item.color]")
+                    p {{ item.name }}
+                h5  {{ item.prisePers }}kr/pers
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput2" value="0" min="0")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+
+    #MenyDrinks(class="Meny")
+        ul
+            li
+                h1 Drika
+            li.menyItem(v-for="item in DryckList")
+                p {{ item.name }} {{ item.prisePers }}kr/pers
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput3" value="0" min="0")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+
+
+    script.
+        var Buffe = new Vue({
+            el: "#MenyBuffer",
+            data: {
+                BuffeList
+            },
+            methods: {
+                add: function(id) {
+                    addOrder(id, 1);
+                }
+            },
+        });
+
+        var Rett = new Vue({
+            el: "#MenyRatter",
+            data: {
+                RettList
+            },
+            methods: {
+                add: function(id) {
+                    addOrder(id, 2);
+                }
+            }
+        });
+
+        var Dryck = new Vue({
+            el: "#MenyDrinks",
+            data: {
+                DryckList
+            },
+            methods: {
+                add: function(id) {
+                    addOrder(id, 3);
+                }
+            }
+        });
