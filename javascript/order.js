@@ -2,11 +2,15 @@ var order = [];
 
 function addOrder(id, type) {
 
-    var antal = document.getElementsByClassName("numberInput")[id-1].value;
+    var antal = document.getElementsByClassName("numberInput" + type)[id-1].value;
     var OBJ;
 
     if(type == 1) {
         OBJ = getBuffe(id);
+    } else if(type == 2) {
+        OBJ = getRatt(id);
+    } else if(type == 3) {
+        OBJ = getDryck(id);
     }
 
     orders = JSON.parse(window.localStorage.getItem("Orders")) == null ? [] : JSON.parse(window.localStorage.getItem("Orders"));

@@ -8,17 +8,19 @@ main#mainHome
                 ut labore et dolore magna aliqua.
         img(src="images/Welcome.jpg" width="100%" hight="100%")
     #DifrentBuffes
-        - var Buffes = [ {name: "smörgos buffe", color: "orange", src: "images/buffe1.jpg"}, {name: "kall skuret", color: "red", src: "images/buffe2.jpg"}, {name: "vego buffe", color: "green", src: "images/buffe3.jpg"}, {name: "tapas", color: "blue", src: "images/buffe4.jpg"} ];
+        - var Buffes = [ {name: "smörgos buffe", color: "orange", src: "images/buffe1.jpg"}, {name: "Smörgos buffe", color: "red", src: "images/buffe3.jpg"}, {name: "vego buffe", color: "green", src: "images/buffe2.jpg"}, {name: "oxe", color: "blue", src: "images/rett1.jpg"} ];
         - for(var i = 0; i < 4; i++)
             .display
-                img(src=Buffes[i].src)
-                div(class=Buffes[i].color + ' textDisplay')
-                    p=Buffes[i].name
+                a(href="Mat.html")
+                    img(src=Buffes[i].src)
+                    div(class=Buffes[i].color + ' textDisplay')
+                        p=Buffes[i].name
     #PartyInfo
         .display
-            img(src="images/party.jpg")
-            div(class="blue textDisplay")
-                p Event
+            a(href="Event.html")
+                img(src="images/party.jpg")
+                div(class="blue textDisplay")
+                    p Event
         #Info
             h1 Fest? Vi fixar!
             p.

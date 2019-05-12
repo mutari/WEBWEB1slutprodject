@@ -4,6 +4,14 @@ main .display {
   color: black;
 }
 
+main .display a {
+  color: black;
+}
+
+main .display a:focus {
+  color: black;
+}
+
 main .display img {
   -webkit-box-shadow: 0px 0px 10px grey;
           box-shadow: 0px 0px 10px grey;
@@ -12,6 +20,10 @@ main .display img {
 main .display:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+main .relativ {
+  position: relative;
 }
 
 main .textDisplay {
@@ -27,6 +39,7 @@ main .textDisplay {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
+  margin-left: 0;
   left: 0;
   top: 75%;
 }
@@ -124,16 +137,20 @@ main .textDisplay {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  border-left: dotted 1px gray;
 }
 
-#mainMat .Meny h1 {
+#mainMat .Meny ul {
+  list-style-type: none;
+}
+
+#mainMat .Meny ul h1 {
   text-align: center;
 }
 
 #mainMat .menyItem {
-  padding-top: 50px;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
+  margin: 0 50px 20px 50px;
+  padding: 50px 0 15px 5px;
   text-align: left;
   position: relative;
   -webkit-box-pack: left;
@@ -154,6 +171,10 @@ main .textDisplay {
 #mainMat .menyItem h5 {
   padding-top: 5px;
   font-size: 18px;
+}
+
+#mainMat .menyItem input[type=number] {
+  width: 25px;
 }
 
 #mainMat .menyItem button {
@@ -177,22 +198,21 @@ main .textDisplay {
   grid-area: MenyBuffer;
 }
 
-#mainMat #MenyBuffer input[type=number] {
-  width: 25px;
-}
-
 #mainMat #MenyRatter {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: MenyRätter;
-  border: solid 1px;
 }
 
 #mainMat #MenyDrinks {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: MenyDrinks;
-  border: solid 1px;
+}
+
+#mainMat #MenyDrinks .menyItem {
+  padding-top: 0px;
+  padding-bottom: 4px;
 }
 
 #mainOrder {
@@ -326,5 +346,90 @@ main .textDisplay {
 #mainOrder div #betala form button:active {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
+}
+
+#mainOmOss #infoDisplay {
+  margin: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+      grid-template-areas: "img info";
+}
+
+#mainOmOss #infoDisplay .display:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
+#mainOmOss #infoDisplay img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: img;
+}
+
+#mainOmOss #infoDisplay #textInfo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: info;
+  padding: 10px 50px 10px 50px;
+}
+
+#mainOmOss #infoDisplay #textInfo h1 {
+  margin: 10px 0 5px 0;
+  padding: 2px 5px 2px 5px;
+  display: inline-block;
+  font-size: 23px;
+}
+
+#mainOmOss #infoDisplay #textInfo p {
+  padding-left: 15px;
+}
+
+#mainEvent #infoDisplay {
+  margin: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "img info" ". info";
+}
+
+#mainEvent #infoDisplay .display {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: img;
+}
+
+#mainEvent #infoDisplay .display:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
+#mainEvent #infoDisplay #textInfo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: info;
+  padding: 10px 150px 10px 100px;
+}
+
+#mainEvent #infoDisplay #textInfo h1 {
+  margin: 10px 0 5px 0;
+  padding: 2px 5px 2px 5px;
+  display: inline-block;
+  font-size: 23px;
+}
+
+#mainEvent #infoDisplay #textInfo ul {
+  margin: 10px;
+  margin-left: 50px;
+}
+
+#mainEvent #infoDisplay #textInfo p {
+  padding-left: 15px;
 }
 /*# sourceMappingURL=styleMain.css.map */

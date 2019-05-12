@@ -36,7 +36,8 @@ main#mainOrder
                     label(for="korttyp") Kort typ: 
                     select(name="korttyp")
                         option(value="Mastercard") Mastercard
-                        option(value="Kreditkort") Kreditkort
+                        option(value="Mastro") Mastro
+                        option(value="Visa") Visa
                 div
                     label(for="kortnummer") Kortnummer:
                     input(type="text" name="kortunmmer")
@@ -46,7 +47,7 @@ main#mainOrder
                     label(for="year") /
                     input(type="number" name="year" max="99" min="00")
                 div
-                    label(for="CSC") 3 sista: 
+                    label(for="CVI") CVI: 
                     input(type="text" name="CSC" max="999" min="000")
                 button(onclick="buy();")
                     img(src="images/shopping-cart.png" width="16" hight="16")

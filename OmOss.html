@@ -4,7 +4,7 @@
     <title>catering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleMain.css">
-    <script src="javascript/BuffeList.js"></script>
+    <script src="javascript/DataList.js"></script>
     <script src="javascript/order.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
@@ -31,8 +31,33 @@
     <!-- image är ett bild spel-->
     <div id="image"><img src="images/bannerImage1.jpg" height="100%" width="100%"></div>
     <!-- main inehåller allt sidans inehål-->
-    <main>
-      <h1>OmOss</h1>
+    <main id="mainOmOss">
+      <div id="infoDisplay">
+        <div class="display"><img src="images/Event.jpg" width="100%" hight="100%">
+          <div class="textDisplay green">
+            <p>Event</p>
+          </div>
+        </div>
+        <div id="textInfo">
+          <h1 class="orange">vår historia</h1>
+          <p>
+            välkomen till [företags namn] Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua.välkomen till [företags namn] Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua.
+            
+          </p>
+          <h1 class="blue">framtiden</h1>
+          <p>
+            välkomen till [företags namn] Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua.älkomen till [företags namn] Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
     </main>
     <!-- footer inehåler kontakt uppgifter och ett mail formolär-->
     <footer>

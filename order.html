@@ -4,7 +4,7 @@
     <title>catering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleMain.css">
-    <script src="javascript/BuffeList.js"></script>
+    <script src="javascript/DataList.js"></script>
     <script src="javascript/order.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--när sidan öpnas kollar jag vilket objeckt man ska beställa-->
@@ -74,7 +74,8 @@
               <label for="korttyp">Kort typ: </label>
               <select name="korttyp">
                 <option value="Mastercard">Mastercard</option>
-                <option value="Kreditkort">Kreditkort</option>
+                <option value="Mastro">Mastro</option>
+                <option value="Visa">Visa</option>
               </select>
             </div>
             <div>
@@ -88,7 +89,7 @@
               <input type="number" name="year" max="99" min="00">
             </div>
             <div>
-              <label for="CSC">3 sista: </label>
+              <label for="CVI">CVI: </label>
               <input type="text" name="CSC" max="999" min="000">
             </div>
             <button onclick="buy();"><img src="images/shopping-cart.png" width="16" hight="16"></button>
