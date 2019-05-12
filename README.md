@@ -3,7 +3,7 @@ mitt slut project i web utveckling 1
 
 i mitt slutprodject har jag använt mig av pug samt scss
 
-#Varför jag gjort på vissa sätt
+# Varför jag gjort på vissa sätt
 * anldeningen till att jag delade upp css i två filer är för att main diven kräver mest css och för att inte detta ska fylla hella huvud css:en la jag main i en egen css fil
 detta göt css mer lättläslig
 
