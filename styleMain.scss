@@ -1,7 +1,20 @@
-//samma för alla
+/*samma för alla*/
 main {
 
-    //bilder med label på
+    *,*:before,*:after{
+        box-sizing:border-box;
+        margin:0;
+        padding:0;
+        /*transition*/
+        -webkit-transition:.25s ease-in-out;
+           -moz-transition:.25s ease-in-out;
+             -o-transition:.25s ease-in-out;
+                transition:.25s ease-in-out;
+        outline:none;
+        font-family:Helvetica Neue,helvetica,arial,verdana,sans-serif;
+    }
+
+    /*bilder med label på*/
     .display {
         position: relative;
         color: black;
@@ -45,7 +58,7 @@ main {
 
 }
 
-//huvud sidan
+/*huvud sidan*/
 #mainHome {
     grid-area: "main";
     display: grid;
@@ -58,7 +71,7 @@ main {
         grid-area: "valkomen";
         display: flex;
         justify-content: space-around;
-        //välkoms texten
+        /*välkoms texten*/
         #valkomenInfo {
             width: 300px;
             padding: 30px;
@@ -74,7 +87,7 @@ main {
             }
 
         }
-        //välkoms bilden 
+        /*välkoms bilden*/
         img {
             width: 640px;
             height: 180px;
@@ -84,7 +97,7 @@ main {
         }
 
     }
-    //buffe priviu
+    /*buffe priviu*/
     #DifrentBuffes {
         grid-area: "Dbuffes";
         display: flex;
@@ -116,7 +129,7 @@ main {
 
 }
 
-// mat sida
+/*mat sida*/
 #mainMat {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -129,7 +142,7 @@ main {
         font-size: 16px;
     }
 
-    //samma för alla menyer
+    /*samma för alla menyer*/
     .Meny {
         display: flex;
         justify-content: space-around;
@@ -208,17 +221,15 @@ main {
 
 }
 
-//order sida
+/*order sida*/
 #mainOrder {
 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px 0 5px 0;
+    padding: 10px 0 10px 0;
 
-    div {
-
-        //display: inline-block;
+    #order {
         border: solid 1px;
         padding: 20px;
 
@@ -280,10 +291,28 @@ main {
     
         }
 
-        #infoAboutBuyer {
+        #transport {
 
             margin-top: 30px;
             border: solid 1px;
+            padding: 20px;
+
+
+            /*toggel*/
+
+            form {
+
+                span {
+                    padding: 10px;
+                }
+
+                #addres {
+                    border: solid 1px;
+                    padding: 10px;
+                    margin-top: 15px;
+                }
+
+            }
 
         }
 
@@ -344,7 +373,7 @@ main {
 
 }
 
-//Om oss sida
+/*Om oss sida*/
 #mainOmOss {
 
     #infoDisplay {
@@ -372,8 +401,13 @@ main {
                 font-size: 23px;
             }
 
+            h3 {
+                margin: 10px 0 5px 0;
+                padding: 2px 5px 2px 15px;
+            }
+
             p {
-                padding-left: 15px;
+                padding-left: 25px;
             }
 
         }
@@ -382,10 +416,11 @@ main {
 
 }
 
+/*Event sida*/
 #mainEvent {
 
     #infoDisplay {
-        margin: 30px;
+        margin: 15px;
         display: grid;
         grid-template-columns: auto 1fr;
         grid-template-rows:  auto 1fr;

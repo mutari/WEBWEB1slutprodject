@@ -33,7 +33,7 @@
     <div id="image"><img src="images/bannerImage1.jpg" height="100%" width="100%"></div>
     <!-- main inehåller allt sidans inehål-->
     <main id="mainOrder">
-      <div>
+      <div id="order">
         <table>
           <caption class="red">Varukorg</caption>
           <thead>
@@ -46,14 +46,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="items in orders">
+            <!--genererar tabbelen med alla produkter du har lagt i kundkorgen-->
+            <tr v-for="item in orders">
               <td> 
-                <button v-on:click="Delete(items.id)"><img src="images/del.png" width="16px" hight="16px"></button>
+                <button v-on:click="Delete(item.id)"><img src="images/del.png" width="16px" hight="16px"></button>
               </td>
-              <td class="Vara">{{ items.name }}</td>
-              <td class="Antal">{{ items.antalPers }}</td>
-              <td class="Pris">{{ items.prise }}</td>
-              <td class="Summa">{{ items.totalPrise }}</td>
+              <td class="Vara">{{ item.name }}</td>
+              <td class="Antal">{{ item.antalPers }}</td>
+              <td class="Pris">{{ item.prise }}</td>
+              <td class="Summa">{{ item.totalPrise }}</td>
             </tr>
           </tbody>
           <tfoot>
@@ -62,11 +63,26 @@
               <td></td>
               <td></td>
               <td></td>
-              <td class="Summa">Totalpris {{ TotalPris() }}</td>
+              <td class="Summa">Totalpris: {{ TotalPris() }}kr</td>
             </tr>
           </tfoot>
         </table>
-        <div id="infoAboutBuyer">  </div>
+        <!--hur man hämtar produkten-->
+        <div id="transport"> 
+          <form> 
+            <div id="toggel">
+              <input class="ios-toggle" type="checkbox" name="checkbox" id="checkbox">
+              <label class="checkbox-label" for="checkbox" data-off="off" data-on="on"></label>
+            </div>
+            <div id="addres">
+              <label for="addres">Address:</label>
+              <input type="text" name="addres"><br>
+              <label for="postcod">Post Code:</label>
+              <input type="text" name="postcod">
+            </div>
+          </form>
+        </div>
+        <!--betalnig-->
         <fieldset id="betala">
           <legend>KortBetalning</legend>
           <form>
@@ -97,6 +113,11 @@
         </fieldset>
       </div>
       <script>
+        //när sidan har laddats så gömer man transport diven
+        document.getElementById('addres').style.display = "none";
+        document.getElementById('addres').addEventListener('change', TransportHome());
+        
+        //tack vare Vue kan jag uppdatera tabbelen med produkter automatiskt utan att behöva uppdatera sidan
         var app = new Vue({
             el: "#mainOrder",
             data: {

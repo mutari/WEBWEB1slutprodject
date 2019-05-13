@@ -1,4 +1,21 @@
 @charset "UTF-8";
+/*samma för alla*/
+main {
+  /*bilder med label på*/
+}
+
+main *, main *:before, main *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /*transition*/
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  outline: none;
+  font-family: Helvetica Neue,helvetica,arial,verdana,sans-serif;
+}
+
 main .display {
   position: relative;
   color: black;
@@ -44,6 +61,7 @@ main .textDisplay {
   top: 75%;
 }
 
+/*huvud sidan*/
 #mainHome {
   grid-area: "main";
   display: -ms-grid;
@@ -51,6 +69,7 @@ main .textDisplay {
   -ms-grid-rows: 220px 200px 400px;
       grid-template-rows: 220px 200px 400px;
       grid-template-areas: "valkomen" "Dbuffes" "event";
+  /*buffe priviu*/
 }
 
 #mainHome #valkomen {
@@ -60,6 +79,8 @@ main .textDisplay {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  /*välkoms texten*/
+  /*välkoms bilden*/
 }
 
 #mainHome #valkomen #valkomenInfo {
@@ -117,6 +138,7 @@ main .textDisplay {
   padding: 10px;
 }
 
+/*mat sida*/
 #mainMat {
   display: -ms-grid;
   display: grid;
@@ -125,6 +147,7 @@ main .textDisplay {
   -ms-grid-rows: 20px 1fr 20px;
       grid-template-rows: 20px 1fr 20px;
       grid-template-areas: ". . ." "MenyBuffer MenyRätter MenyDrinks" ". . .";
+  /*samma för alla menyer*/
 }
 
 #mainMat label {
@@ -215,6 +238,7 @@ main .textDisplay {
   padding-bottom: 4px;
 }
 
+/*order sida*/
 #mainOrder {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -225,84 +249,96 @@ main .textDisplay {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 0 5px 0;
+  padding: 10px 0 10px 0;
 }
 
-#mainOrder div {
+#mainOrder #order {
   border: solid 1px;
   padding: 20px;
 }
 
-#mainOrder div table {
+#mainOrder #order table {
   border-collapse: collapse;
 }
 
-#mainOrder div table caption {
+#mainOrder #order table caption {
   text-align: left;
   font-size: 20px;
   font-weight: 700;
   padding: 10px;
 }
 
-#mainOrder div table th {
+#mainOrder #order table th {
   text-align: left;
   border-bottom: solid 1px gray;
 }
 
-#mainOrder div table tfoot td {
+#mainOrder #order table tfoot td {
   text-align: left;
   border-bottom: solid 1px gray;
   border-top: solid 1px gray;
 }
 
-#mainOrder div table td button {
+#mainOrder #order table td button {
   border: none;
   outline: 0;
 }
 
-#mainOrder div table td button img:hover {
+#mainOrder #order table td button img:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-#mainOrder div table td button img:active {
+#mainOrder #order table td button img:active {
   -webkit-transform: scale(1.6);
           transform: scale(1.6);
 }
 
-#mainOrder div table .Summa {
+#mainOrder #order table .Summa {
   text-align: right;
   width: 100px;
 }
 
-#mainOrder div table .Pris {
+#mainOrder #order table .Pris {
   width: 50px;
 }
 
-#mainOrder div table .Antal {
+#mainOrder #order table .Antal {
   width: 50px;
 }
 
-#mainOrder div table .Vara {
+#mainOrder #order table .Vara {
   width: 200px;
 }
 
-#mainOrder div #infoAboutBuyer {
+#mainOrder #order #transport {
   margin-top: 30px;
   border: solid 1px;
+  padding: 20px;
+  /*toggel*/
 }
 
-#mainOrder div #betala {
+#mainOrder #order #transport form span {
+  padding: 10px;
+}
+
+#mainOrder #order #transport form #addres {
+  border: solid 1px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+#mainOrder #order #betala {
   margin-top: 20px;
   padding: 10px;
   border-color: black;
 }
 
-#mainOrder div #betala legend {
+#mainOrder #order #betala legend {
   text-decoration: underline;
 }
 
-#mainOrder div #betala form {
+#mainOrder #order #betala form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,7 +348,7 @@ main .textDisplay {
           flex-direction: column;
 }
 
-#mainOrder div #betala form div {
+#mainOrder #order #betala form div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,31 +359,32 @@ main .textDisplay {
   border: none;
 }
 
-#mainOrder div #betala form input[type="number"] {
+#mainOrder #order #betala form input[type="number"] {
   width: 15px;
 }
 
-#mainOrder div #betala form input[type="number"]::-webkit-inner-spin-button, #mainOrder div #betala form input[type="number"]::-webkit-outer-spin-button {
+#mainOrder #order #betala form input[type="number"]::-webkit-inner-spin-button, #mainOrder #order #betala form input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   outline: 0;
 }
 
-#mainOrder div #betala form input[name="CSC"] {
+#mainOrder #order #betala form input[name="CSC"] {
   width: 22px;
   overflow: hidden;
 }
 
-#mainOrder div #betala form button {
+#mainOrder #order #betala form button {
   border: none;
   background: none;
   outline: 0;
 }
 
-#mainOrder div #betala form button:active {
+#mainOrder #order #betala form button:active {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
 }
 
+/*Om oss sida*/
 #mainOmOss #infoDisplay {
   margin: 15px;
   display: -ms-grid;
@@ -383,12 +420,18 @@ main .textDisplay {
   font-size: 23px;
 }
 
-#mainOmOss #infoDisplay #textInfo p {
-  padding-left: 15px;
+#mainOmOss #infoDisplay #textInfo h3 {
+  margin: 10px 0 5px 0;
+  padding: 2px 5px 2px 15px;
 }
 
+#mainOmOss #infoDisplay #textInfo p {
+  padding-left: 25px;
+}
+
+/*Event sida*/
 #mainEvent #infoDisplay {
-  margin: 30px;
+  margin: 15px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 1fr;

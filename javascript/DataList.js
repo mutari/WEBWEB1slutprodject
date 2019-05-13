@@ -45,6 +45,12 @@ var RettList =
         name: "köttbullar",
         prisePers: 36,
         id: 2
+    },
+    {
+        color: "blue",
+        name: "pasta/kötfersås",
+        prisePers: 45,
+        id: 3
     }
 ]
 

@@ -5,13 +5,9 @@ function addOrder(id, type) {
     var antal = document.getElementsByClassName("numberInput" + type)[id-1].value;
     var OBJ;
 
-    if(type == 1) {
-        OBJ = getBuffe(id);
-    } else if(type == 2) {
-        OBJ = getRatt(id);
-    } else if(type == 3) {
-        OBJ = getDryck(id);
-    }
+    if(type == 1) OBJ = getBuffe(id);
+    else if(type == 2) OBJ = getRatt(id);
+    else if(type == 3) OBJ = getDryck(id);
 
     orders = JSON.parse(window.localStorage.getItem("Orders")) == null ? [] : JSON.parse(window.localStorage.getItem("Orders"));
 
@@ -27,6 +23,14 @@ function addOrder(id, type) {
     window.localStorage.setItem("Orders", JSON.stringify(orders));
 
     alert(OBJ.name + " added to cart");
+}
+
+function TransportHome() {
+    var transDiv = document.getElementById('addres');
+    if(transDiv.style.display === "none")
+        transDiv.style.display = "block";
+    else
+        transDiv.style.display = "none";
 }
 
 function buy() {
