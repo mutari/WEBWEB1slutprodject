@@ -1,5 +1,5 @@
 main#mainOrder
-    div
+    #order
         table
             caption.red Varukorg
             thead
@@ -10,25 +10,37 @@ main#mainOrder
                     th.Pris Pris
                     th.Summa summa
             tbody
-                tr(v-for="items in orders")
+                //genererar tabbelen med alla produkter du har lagt i kundkorgen
+                tr(v-for="item in orders")
                     td 
-                        button(v-on:click="Delete(items.id)")
+                        button(v-on:click="Delete(item.id)")
                             img(src="images/del.png" width="16px" hight="16px")
-                    td.Vara {{ items.name }}
-                    td.Antal {{ items.antalPers }}
-                    td.Pris {{ items.prise }}
-                    td.Summa {{ items.totalPrise }}
+                    td.Vara {{ item.name }}
+                    td.Antal {{ item.antalPers }}
+                    td.Pris {{ item.prise }}
+                    td.Summa {{ item.totalPrise }}
             tfoot
                 tr
                     td
                     td
                     td
                     td
-                    td.Summa Totalpris {{ TotalPris() }}
+                    td.Summa Totalpris: {{ TotalPris() }}kr
 
-        #infoAboutBuyer   
+        //hur man hämtar produkten
+        #transport 
+            form 
+                #toggel
+                    input(type="checkbox" name="checkbox" id="checkbox" class="ios-toggle")
+                    label(for="checkbox" class="checkbox-label" data-off="off" data-on="on")
+                #addres
+                    label(for="addres") Address:
+                    input(type="text" name="addres")
+                    br
+                    label(for="postcod") Post Code:
+                    input(type="text" name="postcod")
 
-
+        //betalnig
         fieldset#betala
             legend KortBetalning
             form
@@ -53,6 +65,11 @@ main#mainOrder
                     img(src="images/shopping-cart.png" width="16" hight="16")
 
     script.
+        //när sidan har laddats så gömer man transport diven
+        document.getElementById('addres').style.display = "none";
+        document.getElementById('addres').addEventListener('change', TransportHome());
+
+        //tack vare Vue kan jag uppdatera tabbelen med produkter automatiskt utan att behöva uppdatera sidan
         var app = new Vue({
             el: "#mainOrder",
             data: {
