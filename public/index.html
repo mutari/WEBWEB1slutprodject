@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html leng="sv">
+  <head>
+    <title>catering</title>
+    <link rel="stylesheet" href="/fileCSS/style.css">
+    <link rel="stylesheet" href="/fileCSS/styleMain.css">
+    <!--link(rel="stylesheet" href="../style/style.css")-->
+    <!--link(rel="stylesheet" href="../style/styleMain.css")-->
+    <script src="/fileJS/javascript/DataList.js"></script>
+    <script src="/fileJS/javascript/order.js"></script>
+    <!--script(src="../javascript/DataList.js")-->
+    <!--script(src="../javascript/order.js")-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!-- header element inehåller en meny samt logo bild-->
+    <header> 
+      <div id="logo"><a href="index.html"><img></a></div>
+      <div id="stars">
+        <ul>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/starEmpty.png"></li>
+        </ul>
+      </div>
+      <ul>
+        <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
+        <li><a href="OmOss.html">Om oss</a></li>
+        <li><a href="Event.html">Event</a></li>
+        <li><a href="Mat.html">Mat</a></li>
+      </ul>
+    </header>
+    <!-- image är ett bild spel-->
+    <div id="image"><img src="images/bannerImage1.jpg" height="100%" width="100%"></div>
+    <!-- main inehåller allt sidans inehål-->
+    <main id="mainHome">
+      <div id="valkomen">
+        <div id="valkomenInfo">
+          <h1>Välkommen</h1>
+          <p>
+            välkomen till [företags namn] Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+            ut labore et dolore magna aliqua.
+          </p>
+        </div><img src="images/Welcome.jpg" width="100%" hight="100%">
+      </div>
+      <div id="DifrentBuffes">
+        <div class="display"><a href="Mat.html"><img src="images/buffe1.jpg">
+            <div class="orange textDisplay">
+              <p>buffe</p>
+            </div></a></div>
+        <div class="display"><a href="Mat.html"><img src="images/buffe3.jpg">
+            <div class="red textDisplay">
+              <p>salads buffe</p>
+            </div></a></div>
+        <div class="display"><a href="Mat.html"><img src="images/buffe2.jpg">
+            <div class="green textDisplay">
+              <p>vego buffe</p>
+            </div></a></div>
+        <div class="display"><a href="Mat.html"><img src="images/rett1.jpg">
+            <div class="blue textDisplay">
+              <p>oxe</p>
+            </div></a></div>
+      </div>
+      <div id="PartyInfo">
+        <div class="display"><a href="Event.html"><img src="images/party.jpg">
+            <div class="blue textDisplay">
+              <p>Event</p>
+            </div></a></div>
+        <div id="Info">
+          <h1>Fest? Vi fixar!</h1>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. um fugiat quo voluptas nulla pariatur?</p>
+        </div>
+      </div>
+    </main>
+    <!-- footer inehåler kontakt uppgifter och ett mail formolär-->
+    <footer>
+      <div id="kontakt">
+        <div>
+          <h1>Kontakt uppgifter</h1>
+          <p>address</p>
+          <p>gatunumer</p>
+          <p>något mera</p>
+          <h3>tel:</h3>
+          <p>070-000 11 33</p>
+          <h5>teltider</h5>
+          <p class="tider">mån-lör 8-18</p>
+          <p class="tider">sön stängt</p>
+        </div>
+      </div>
+      <div id="message">
+        <h1>Skicka ett medelande</h1>
+        <form method="post" action="php/formmail.php">
+          <label for="email">från</label><br>
+          <input type="text" name="email" placeholder="test@yahoo.com"><br>
+          <label for="subject">ämne</label><br>
+          <input type="text" name="subject"><br>
+          <textarea name="message" cols="50" rows="7"></textarea><br>
+          <button type="submit">skicka</button>
+        </form>
+      </div>
+      <p id="copy">©philip johansson</p>
+    </footer>
+  </body>
+</html>

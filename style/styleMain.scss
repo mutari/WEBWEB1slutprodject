@@ -1,0 +1,462 @@
+/*samma för alla*/
+main {
+
+    *,*:before,*:after{
+        box-sizing:border-box;
+        margin:0;
+        padding:0;
+        /*transition*/
+        -webkit-transition:.25s ease-in-out;
+           -moz-transition:.25s ease-in-out;
+             -o-transition:.25s ease-in-out;
+                transition:.25s ease-in-out;
+        outline:none;
+        font-family:Helvetica Neue,helvetica,arial,verdana,sans-serif;
+    }
+
+    /*bilder med label på*/
+    .display {
+        position: relative;
+        color: black;
+        
+        a {
+            color: black;
+
+            &:focus {
+                color: black;
+            }
+
+        }
+
+        img {
+            box-shadow: 0px 0px 10px grey;
+        }
+
+        &:hover {
+
+            transform: scale(1.2);
+
+        }
+
+    }
+
+    .relativ {
+        position: relative;
+    }
+
+    .textDisplay {
+        display: flex;
+        height: 25px;
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        margin-left: 0;
+        left: 0;
+        top: 75%;
+    }
+
+}
+
+/*huvud sidan*/
+#mainHome {
+    grid-area: "main";
+    display: grid;
+    grid-template-rows: 220px 200px 400px;
+    grid-template-areas: "valkomen"
+                         "Dbuffes"
+                         "event";
+    
+    #valkomen {
+        grid-area: "valkomen";
+        display: flex;
+        justify-content: space-around;
+        /*välkoms texten*/
+        #valkomenInfo {
+            padding: 40px;
+            padding-left: 60px;
+            float: left;
+
+            h1 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-left: 10px;
+            }
+
+        }
+        /*välkoms bilden*/
+        img {
+            width: 640px;
+            height: 180px;
+            float: right;
+            margin: 20px;
+            box-shadow: 0px 0px 10px grey;
+        }
+
+    }
+    /*buffe priviu*/
+    #DifrentBuffes {
+        grid-area: "Dbuffes";
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    #PartyInfo {
+        grid-area: "event";
+        display: flex;
+        justify-content: space-around;
+
+        padding-top: 40px;
+
+        #Info {
+            width: 50%;
+            padding: 10px;
+            
+            p {
+                padding: 10px;                        
+            }
+
+        }
+
+    }
+
+}
+
+/*mat sida*/
+#mainMat {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 20px 1fr 20px;
+    grid-template-areas:    ". . ."
+                            "MenyBuffer MenyRätter MenyDrinks"
+                            ". . .";
+
+    label {
+        font-size: 16px;
+    }
+
+    /*samma för alla menyer*/
+    .Meny {
+        display: flex;
+        justify-content: space-around;
+        border-left: dotted 1px gray;
+
+        ul {
+            list-style-type: none;
+
+            h1 {
+                text-align: center;
+            }
+
+        }
+    }
+
+    .menyItem {
+        margin: 0 50px 20px 50px;
+        padding: 50px 0 15px 5px;
+        text-align: left;
+        position: relative;
+        justify-content: left;
+        border-left: solid 1px;
+        
+        .textDisplay {
+            top: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            padding: 4px 0 4px 0;
+        }
+
+        h5 {
+            padding-top: 5px;
+            font-size: 18px;
+        }
+
+        input[type=number] {
+            width: 25px;
+        }
+
+        button {
+            margin: 0;
+            padding: 4px;
+            font-weight: bold;
+
+            &:active {
+                transform: scale(1.2);
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+
+    }
+
+    //meny med buffer
+    #MenyBuffer {
+        grid-area: MenyBuffer;
+
+    }
+
+    #MenyRatter {
+        grid-area: MenyRätter;
+
+    }
+
+    #MenyDrinks {
+        grid-area: MenyDrinks;
+
+        .menyItem {
+            padding-top: 0px;
+            padding-bottom: 4px;
+        }
+    }
+
+}
+
+/*order sida*/
+#mainOrder {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+
+    #order {
+        border: solid 1px;
+        padding: 20px;
+
+        table {
+            border-collapse: collapse;
+            
+            caption {
+                text-align: left;
+                font-size: 20px;
+                font-weight: 700;
+                padding: 10px;
+            }
+        
+            th {
+                text-align: left;
+                border-bottom: solid 1px gray;
+            }
+        
+            tfoot td {
+                text-align: left;
+                border-bottom: solid 1px gray;
+                border-top: solid 1px gray;
+            }
+
+            td button {
+                border: none;
+                outline: 0;
+
+                img {
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+
+                    &:active {
+                        transform: scale(1.6);
+                    }
+
+                }
+
+            }
+        
+            .Summa {
+                text-align: right;
+                width: 100px;
+            }
+        
+            .Pris {
+                width: 50px
+            }
+        
+            .Antal {
+                width: 50px;
+            }
+        
+            .Vara {
+                width: 200px;
+            }
+    
+        }
+
+        #transport {
+
+            margin-top: 30px;
+            border: solid 1px;
+            padding: 20px;
+
+
+            /*toggel*/
+
+            form {
+
+                span {
+                    padding: 10px;
+                }
+
+                #addres {
+                    border: solid 1px;
+                    padding: 10px;
+                    margin-top: 15px;
+                }
+
+            }
+
+        }
+
+        #betala {
+            margin-top: 20px;
+            padding: 10px;
+            border-color: black;
+
+            legend {
+                text-decoration: underline;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    padding: 3px;
+                    border: none;
+                }
+
+                input {
+
+                    &[type="number"] {
+                        width: 15px;
+    
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            outline: 0;
+                        }
+    
+                    }
+
+                    &[name="CSC"] {
+                        width: 22px;
+                        overflow: hidden;
+                    }   
+    
+                }
+                button {
+                    border: none;
+                    background: none;
+                    outline: 0;
+
+                    &:active {
+                        transform: scale(1.5);
+                    }
+
+                }
+    
+            }
+        }
+
+    }
+
+}
+
+/*Om oss sida*/
+#mainOmOss {
+
+    #infoDisplay {
+        margin: 15px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: "img info";
+
+        .display:hover {
+            transform: none;
+        }
+
+        img {
+            grid-area: img;
+        }
+
+        #textInfo {
+            grid-area: info;
+            padding: 10px 50px 10px 50px;
+
+            h1 {
+                margin: 10px 0 5px 0;
+                padding: 2px 5px 2px 5px;
+                display: inline-block;
+                font-size: 23px;
+            }
+
+            h3 {
+                margin: 10px 0 5px 0;
+                padding: 2px 5px 2px 15px;
+            }
+
+            p {
+                padding-left: 25px;
+            }
+
+        }
+        
+    }
+
+}
+
+/*Event sida*/
+#mainEvent {
+
+    #infoDisplay {
+        margin: 15px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows:  auto 1fr;
+        grid-template-areas: "img info"
+                             ". info";
+
+        .display {
+            grid-area: img;
+
+            &:hover {
+                transform: none;
+            }
+
+        }
+
+        #textInfo {
+            grid-area: info;
+            padding: 10px 150px 10px 100px;
+
+            h1 {
+                margin: 10px 0 5px 0;
+                padding: 2px 5px 2px 5px;
+                display: inline-block;
+                font-size: 23px;
+            }
+
+            ul {
+                margin: 10px;
+                margin-left: 50px;
+            }
+
+            p {
+                padding-left: 15px;
+            }
+
+        }
+        
+    }
+
+}

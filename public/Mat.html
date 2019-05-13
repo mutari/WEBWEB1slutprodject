@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html leng="sv">
+  <head>
+    <title>catering</title>
+    <link rel="stylesheet" href="/fileCSS/style.css">
+    <link rel="stylesheet" href="/fileCSS/styleMain.css">
+    <!--link(rel="stylesheet" href="../style/style.css")-->
+    <!--link(rel="stylesheet" href="../style/styleMain.css")-->
+    <script src="/fileJS/javascript/DataList.js"></script>
+    <script src="/fileJS/javascript/order.js"></script>
+    <!--script(src="../javascript/DataList.js")-->
+    <!--script(src="../javascript/order.js")-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!-- header element inehåller en meny samt logo bild-->
+    <header> 
+      <div id="logo"><a href="index.html"><img></a></div>
+      <div id="stars">
+        <ul>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/star.png"></li>
+          <li><img src="images/starEmpty.png"></li>
+        </ul>
+      </div>
+      <ul>
+        <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
+        <li><a href="OmOss.html">Om oss</a></li>
+        <li><a href="Event.html">Event</a></li>
+        <li><a href="Mat.html">Mat</a></li>
+      </ul>
+    </header>
+    <!-- image är ett bild spel-->
+    <div id="image"><img src="images/bannerImage1.jpg" height="100%" width="100%"></div>
+    <!-- main inehåller allt sidans inehål-->
+    <main id="mainMat">
+      <!--buffe meny alla buffer man kan beställa-->
+      <div class="Meny" id="MenyBuffer">
+        <ul>
+          <li>
+            <h1>Buffeer</h1>
+          </li>
+          <li class="menyItem" v-for="item in BuffeList">
+            <div class="textDisplay " v-bind:class="item.color">
+              <p>{{ item.name }}</p>
+            </div>
+            <p>{{ item.about }}</p>
+            <p v-html="item.have"></p>
+            <h5>{{ item.prisePers }}kr/pars</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput1" type="number" name="antal" value="0" min="0">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+      </div>
+      <div class="Meny" id="MenyRatter">
+        <ul>
+          <li>
+            <h1>Rätter</h1>
+          </li>
+          <li class="menyItem" v-for="item in RettList">
+            <div class="textDisplay " v-bind:class="[item.color]">
+              <p>{{ item.name }}</p>
+            </div>
+            <h5> {{ item.prisePers }}kr/pers</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput2" type="number" name="antal" value="0" min="0">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+      </div>
+      <div class="Meny" id="MenyDrinks">
+        <ul>
+          <li>
+            <h1>Drika</h1>
+          </li>
+          <li class="menyItem" v-for="item in DryckList">
+            <p>{{ item.name }} {{ item.prisePers }}kr/pers</p>
+            <label for="antal">antal</label>
+            <input class="numberInput3" type="number" name="antal" value="0" min="0">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+      </div>
+      <script>
+        var Buffe = new Vue({
+            el: "#MenyBuffer",
+            data: {
+                BuffeList
+            },
+            methods: {
+                add: function(id) {
+                    addOrder(id, 1);
+                }
+            },
+        });
+        
+        var Rett = new Vue({
+            el: "#MenyRatter",
+            data: {
+                RettList
+            },
+            methods: {
+                add: function(id) {
+                    addOrder(id, 2);
+                }
+            }
+        });
+        
+        var Dryck = new Vue({
+            el: "#MenyDrinks",
+            data: {
+                DryckList
+            },
+            methods: {
+                add: function(id) {
+                    addOrder(id, 3);
+                }
+            }
+        });
+      </script>
+    </main>
+    <!-- footer inehåler kontakt uppgifter och ett mail formolär-->
+    <footer>
+      <div id="kontakt">
+        <div>
+          <h1>Kontakt uppgifter</h1>
+          <p>address</p>
+          <p>gatunumer</p>
+          <p>något mera</p>
+          <h3>tel:</h3>
+          <p>070-000 11 33</p>
+          <h5>teltider</h5>
+          <p class="tider">mån-lör 8-18</p>
+          <p class="tider">sön stängt</p>
+        </div>
+      </div>
+      <div id="message">
+        <h1>Skicka ett medelande</h1>
+        <form method="post" action="php/formmail.php">
+          <label for="email">från</label><br>
+          <input type="text" name="email" placeholder="test@yahoo.com"><br>
+          <label for="subject">ämne</label><br>
+          <input type="text" name="subject"><br>
+          <textarea name="message" cols="50" rows="7"></textarea><br>
+          <button type="submit">skicka</button>
+        </form>
+      </div>
+      <p id="copy">©philip johansson</p>
+    </footer>
+  </body>
+</html>
