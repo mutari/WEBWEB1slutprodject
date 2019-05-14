@@ -3,19 +3,6 @@ $antalBuffer: 4;
 /*samma för alla*/
 main {
 
-    *,*:before,*:after{
-        box-sizing:border-box;
-        margin:0;
-        padding:0;
-        /*transition*/
-        -webkit-transition:.25s ease-in-out;
-           -moz-transition:.25s ease-in-out;
-             -o-transition:.25s ease-in-out;
-                transition:.25s ease-in-out;
-        outline:none;
-        font-family:Helvetica Neue,helvetica,arial,verdana,sans-serif;
-    }
-
     /*bilder med label på*/
     .display {
         position: relative;
@@ -49,7 +36,9 @@ main {
     .textDisplay {
         display: flex;
         height: 25px;
-        width: 100px;
+        min-width: 100px;
+        max-width: 150px;
+        padding: 0 4px 0 4px;
         justify-content: center;
         align-items: center;
         position: absolute;
@@ -268,7 +257,7 @@ main {
         grid-template-areas:    ". MenyBuffer ."
                                 ". MenyRätter ."
                                 ". MenyDrinks .";
-        padding: 10px;
+        padding-top: 10px;
 
         #MenyBuffer, #MenyRatter, #MenyDrinks {
             width: 100%;
@@ -462,8 +451,20 @@ main {
         grid-template-columns: auto 1fr;
         grid-template-areas: "img info";
 
-        .display:hover {
-            transform: none;
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: auto 1fr;
+            grid-template-rows:  auto 1fr auto ;
+            grid-template-areas: ". img ."
+                                 ". info .";
+        }
+
+        .display {
+            grid-area: img;
+
+            &:hover {
+                transform: none;
+            }
+
         }
 
         img {
