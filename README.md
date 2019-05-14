@@ -22,8 +22,8 @@ detta göt css mer lättläslig
 
 Jag har utgår i från produkter som jag har hemma själv
 
-* IPhone 6/7/8 **375 * 667**
-* IPad **768 * 1024**
+* telefoner max-width = 375px
+* plattor max-width = 768px
 
 
 

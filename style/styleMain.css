@@ -137,6 +137,39 @@ main .textDisplay {
   padding: 10px;
 }
 
+@media only screen and (max-width: 768px) {
+  #mainHome {
+    -ms-grid-rows: 220px 200px 400px;
+        grid-template-rows: 220px 200px 400px;
+    /*buffe priviu*/
+  }
+  #mainHome #valkomen {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /*välkoms bilden*/
+  }
+  #mainHome #valkomen img {
+    display: none;
+  }
+  #mainHome #DifrentBuffes {
+    /*tar bort ett av mat displayerna*/
+  }
+  #mainHome #DifrentBuffes .display:last-child {
+    display: none;
+  }
+  #mainHome #PartyInfo .display {
+    display: none;
+  }
+  #mainHome #PartyInfo #Info {
+    margin-top: 20px;
+  }
+}
+
 /*mat sida*/
 #mainMat {
   display: -ms-grid;
@@ -157,17 +190,21 @@ main .textDisplay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-left: dotted 1px gray;
+}
+
+#mainMat .Meny h1 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 #mainMat .Meny ul {
   list-style-type: none;
-}
-
-#mainMat .Meny ul h1 {
-  text-align: center;
 }
 
 #mainMat .menyItem {
@@ -235,6 +272,39 @@ main .textDisplay {
 #mainMat #MenyDrinks .menyItem {
   padding-top: 0px;
   padding-bottom: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  #mainMat {
+    -ms-grid-columns: 20px 1fr 20px;
+        grid-template-columns: 20px 1fr 20px;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: ". MenyBuffer ." ". MenyRätter ." ". MenyDrinks .";
+    padding: 10px;
+  }
+  #mainMat #MenyBuffer, #mainMat #MenyRatter, #mainMat #MenyDrinks {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    border: none;
+    padding-bottom: 10px;
+    border-bottom: dotted 1px gray;
+  }
+  #mainMat #MenyBuffer li, #mainMat #MenyRatter li, #mainMat #MenyDrinks li {
+    width: 250px;
+  }
+  #mainMat #MenyBuffer ul, #mainMat #MenyRatter ul, #mainMat #MenyDrinks ul {
+    -webkit-columns: 2;
+            columns: 2;
+  }
+  #mainMat #MenyBuffer li:nth-child(1), #mainMat #MenyRatter li:nth-child(1), #mainMat #MenyDrinks li:nth-child(1) {
+    width: 100%;
+  }
+  #mainMat #MenyDrinks {
+    border: none;
+  }
 }
 
 /*order sida*/
@@ -438,6 +508,16 @@ main .textDisplay {
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
       grid-template-areas: "img info" ". info";
+}
+
+@media only screen and (max-width: 768px) {
+  #mainEvent #infoDisplay {
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+    -ms-grid-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: ". img ." ". info .";
+  }
 }
 
 #mainEvent #infoDisplay .display {

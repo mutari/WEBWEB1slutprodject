@@ -14,7 +14,7 @@ main#mainOrder
                 tr(v-for="item in orders")
                     td 
                         button(v-on:click="Delete(item.id)")
-                            img(src="images/del.png" width="16px" hight="16px")
+                            img(src="../images/del.png" width="16px" hight="16px")
                     td.Vara {{ item.name }}
                     td.Antal {{ item.antalPers }}
                     td.Pris {{ item.prise }}
@@ -62,7 +62,7 @@ main#mainOrder
                     label(for="CVI") CVI: 
                     input(type="text" name="CSC" max="999" min="000")
                 button(onclick="buy();")
-                    img(src="images/shopping-cart.png" width="16" hight="16")
+                    img(src="../images/shopping-cart.png" width="16" hight="16")
 
     script.
         //när sidan har laddats så gömer man transport diven

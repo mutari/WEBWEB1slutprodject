@@ -2,9 +2,8 @@ main#mainMat
 
     //buffe meny alla buffer man kan beställa
     #MenyBuffer(class="Meny")
+        h1 Buffeer
         ul
-            li
-                h1 Buffeer
             li.menyItem(v-for="item in BuffeList")
                 div(class="textDisplay " v-bind:class="item.color")
                     p {{ item.name }}
@@ -16,9 +15,8 @@ main#mainMat
                 button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
 
     #MenyRatter(class="Meny")
+        h1 Rätter
         ul
-            li
-                h1 Rätter
             li.menyItem(v-for="item in RettList")
                 div(class="textDisplay " v-bind:class="[item.color]")
                     p {{ item.name }}
@@ -28,9 +26,8 @@ main#mainMat
                 button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
 
     #MenyDrinks(class="Meny")
+        h1 Drika
         ul
-            li
-                h1 Drika
             li.menyItem(v-for="item in DryckList")
                 p {{ item.name }} {{ item.prisePers }}kr/pers
                 label(for="antal") antal

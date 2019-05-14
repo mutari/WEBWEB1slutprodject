@@ -29,6 +29,12 @@ var DryckList =
         name: "en flaska röt vin",
         prisePers: 185,
         id: 5
+    },
+    {
+        color: "red",
+        name: "en flaska vit vin",
+        prisePers: 200,
+        id: 5
     }
 ]
 
@@ -45,6 +51,12 @@ var RettList =
         name: "köttbullar",
         prisePers: 36,
         id: 2
+    },
+    {
+        color: "blue",
+        name: "pasta/kötfersås",
+        prisePers: 45,
+        id: 3
     },
     {
         color: "blue",
