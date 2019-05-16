@@ -24,11 +24,3 @@ Jag har utgår i från produkter som jag har hemma själv
 
 * telefoner max-width = 375px
 * plattor max-width = 768px
-
-
-
-
-
-#
-
-för testing har jag använt mig av en väldigt änkel server som jag skrev i node express.js

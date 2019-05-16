@@ -218,8 +218,15 @@ html {
                 width: 100px;
                 text-align: center;
                 margin: auto;
+                margin-bottom: 10px;
                 font-size: 80%;
                 color: gray;
+
+                a {
+                    color: gray;
+                    text-decoration: none;
+                } 
+
             }
 
         }

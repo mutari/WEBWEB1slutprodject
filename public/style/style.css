@@ -227,8 +227,14 @@ html body footer #copy {
   width: 100px;
   text-align: center;
   margin: auto;
+  margin-bottom: 10px;
   font-size: 80%;
   color: gray;
+}
+
+html body footer #copy a {
+  color: gray;
+  text-decoration: none;
 }
 
 html .orange {
