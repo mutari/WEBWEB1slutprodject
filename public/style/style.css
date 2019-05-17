@@ -1,18 +1,29 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
 }
 
+/* univarsielt för alla sidor */
+html {
+  /* denna css en kommer att vara samma på alla sidor */
+  /* färg classer */
+}
+
 html body {
   width: 100%;
   margin: auto;
+  /*jag använder grid för att placera ut alla object*/
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 70px 180px 1fr 320px;
-      grid-template-rows: 70px 180px 1fr 320px;
+  -ms-grid-rows: 70px auto 1fr 320px;
+      grid-template-rows: 70px auto 1fr 320px;
       grid-template-areas: "header" "image" "main" "footer";
+  /*headern överst på sidan */
+  /*bildespel presic under headern */
+  /*footer i borten av sidan*/
 }
 
 html body header {
@@ -105,16 +116,17 @@ html body header #dropDown {
 
 @media only screen and (max-width: 375px) {
   html body header {
-    -ms-grid-columns: 70px 225px 1fr 100px;
-        grid-template-columns: 70px 225px 1fr 100px;
-        grid-template-areas: "logo stars . ddown";
+    -ms-grid-columns: 70px 1fr 100px;
+        grid-template-columns: 70px 1fr 100px;
+        grid-template-areas: "logo . ddown";
   }
   html body header #dropDown {
     -ms-grid-row: 1;
-    -ms-grid-column: 4;
+    -ms-grid-column: 3;
     grid-area: ddown;
     position: relative;
     display: inline-block;
+    border: solid 1px;
   }
   html body header #ddcontent {
     display: none;
@@ -133,8 +145,12 @@ html body header #dropDown {
 
 html body #image {
   grid-area: "image";
+}
+
+html body #image img {
   -webkit-box-shadow: 0px 5px 10px gray;
           box-shadow: 0px 5px 10px gray;
+  width: 100vw;
 }
 
 html body footer {
