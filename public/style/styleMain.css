@@ -169,6 +169,7 @@ main .textDisplay {
   -ms-grid-rows: 20px 1fr 20px;
       grid-template-rows: 20px 1fr 20px;
       grid-template-areas: ". . ." "MenyBuffer MenyRätter MenyDrinks" ". . .";
+  background-color: #effdf5;
   /*samma för alla menyer*/
 }
 
@@ -188,6 +189,12 @@ main .textDisplay {
 }
 
 #mainMat .Meny h1 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#mainMat .Meny h3 {
   text-align: center;
   width: 100%;
   margin-bottom: 20px;

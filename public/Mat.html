@@ -60,32 +60,109 @@
             <p v-html="item.have"></p>
             <h5>{{ item.prisePers }}kr/pars</h5>
             <label for="antal">antal</label>
-            <input class="numberInput1" type="number" name="antal" value="0" min="0">
+            <input class="numberInput1" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
             <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
           </li>
         </ul>
       </div>
       <div class="Meny" id="MenyRatter">
         <h1>Rätter</h1>
+        <!--kötträtter-->
+        <h3>kött</h3>
         <ul>
-          <li class="menyItem" v-for="item in RettList">
+          <li class="menyItem" v-for="item in RettList" v-if="item.type == 1">
             <div class="textDisplay " v-bind:class="[item.color]">
               <p>{{ item.name }}</p>
             </div>
             <h5> {{ item.prisePers }}kr/pers</h5>
             <label for="antal">antal</label>
-            <input class="numberInput2" type="number" name="antal" value="0" min="0">
+            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+        <!--fisk-->
+        <h3>fisk</h3>
+        <ul>
+          <li class="menyItem" v-for="item in RettList" v-if="item.type == 2">
+            <div class="textDisplay " v-bind:class="[item.color]">
+              <p>{{ item.name }}</p>
+            </div>
+            <h5> {{ item.prisePers }}kr/pers</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+        <!--vegitariskt-->
+        <h3>vego</h3>
+        <ul>
+          <li class="menyItem" v-for="item in RettList" v-if="item.type == 3">
+            <div class="textDisplay " v-bind:class="[item.color]">
+              <p>{{ item.name }}</p>
+            </div>
+            <h5> {{ item.prisePers }}kr/pers</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+        <!--sallader-->
+        <h3>sallader</h3>
+        <ul>
+          <li class="menyItem" v-for="item in RettList" v-if="item.type == 4">
+            <div class="textDisplay " v-bind:class="[item.color]">
+              <p>{{ item.name }}</p>
+            </div>
+            <h5> {{ item.prisePers }}kr/pers</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+        <!--tillbehör-->
+        <h3>tillbehör</h3>
+        <ul>
+          <li class="menyItem" v-for="item in RettList" v-if="item.type == 5">
+            <div class="textDisplay " v-bind:class="[item.color]">
+              <p>{{ item.name }}</p>
+            </div>
+            <h5> {{ item.prisePers }}kr/pers</h5>
+            <label for="antal">antal</label>
+            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
             <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
           </li>
         </ul>
       </div>
       <div class="Meny" id="MenyDrinks">
         <h1>Drika</h1>
+        <!--alla okilka katogorier av drycker-->
+        <!--vindrycker-->
+        <h3>vin</h3>
         <ul>
-          <li class="menyItem" v-for="item in DryckList">
-            <p>{{ item.name }} {{ item.prisePers }}kr/pers</p>
+          <li class="menyItem" v-for="item in DryckList" v-if="item.type == 2">
+            <p>{{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}</p>
             <label for="antal">antal</label>
-            <input class="numberInput3" type="number" name="antal" value="0" min="0">
+            <input class="numberInput3" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+        <!--öl -->
+        <h3>öl</h3>
+        <ul>
+          <li class="menyItem" v-for="item in DryckList" v-if="item.type == 1">
+            <p>{{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}</p>
+            <label for="antal">antal</label>
+            <input class="numberInput3" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+          </li>
+        </ul>
+        <!--alkoholfria drycker-->
+        <h3>alkofrit</h3>
+        <ul>
+          <li class="menyItem" v-for="item in DryckList" v-if="item.type == 3">
+            <p>{{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}</p>
+            <label for="antal">antal</label>
+            <input class="numberInput3" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
             <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
           </li>
         </ul>

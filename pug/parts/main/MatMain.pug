@@ -11,27 +11,93 @@ main#mainMat
                 p(v-html="item.have")
                 h5 {{ item.prisePers }}kr/pars
                 label(for="antal") antal
-                input(type="number" name="antal" class="numberInput1" value="0" min="0")
+                input(type="number" name="antal" class="numberInput1" value="0" min="0" v-bind:class="item.color")
                 button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
 
     #MenyRatter(class="Meny")
         h1 Rätter
+        //kötträtter
+        h3 kött
         ul
-            li.menyItem(v-for="item in RettList")
+            li.menyItem(v-for="item in RettList" v-if="item.type == 1")
                 div(class="textDisplay " v-bind:class="[item.color]")
                     p {{ item.name }}
                 h5  {{ item.prisePers }}kr/pers
                 label(for="antal") antal
-                input(type="number" name="antal" class="numberInput2" value="0" min="0")
+                input(type="number" name="antal" class="numberInput2" value="0" min="0" v-bind:class="item.color")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+
+        //fisk
+        h3 fisk
+        ul
+            li.menyItem(v-for="item in RettList" v-if="item.type == 2")
+                div(class="textDisplay " v-bind:class="[item.color]")
+                    p {{ item.name }}
+                h5  {{ item.prisePers }}kr/pers
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput2" value="0" min="0" v-bind:class="item.color")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+
+        //vegitariskt
+        h3 vego
+        ul
+            li.menyItem(v-for="item in RettList" v-if="item.type == 3")
+                div(class="textDisplay " v-bind:class="[item.color]")
+                    p {{ item.name }}
+                h5  {{ item.prisePers }}kr/pers
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput2" value="0" min="0" v-bind:class="item.color")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+
+        //sallader
+        h3 sallader
+        ul
+            li.menyItem(v-for="item in RettList" v-if="item.type == 4")
+                div(class="textDisplay " v-bind:class="[item.color]")
+                    p {{ item.name }}
+                h5  {{ item.prisePers }}kr/pers
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput2" value="0" min="0" v-bind:class="item.color")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+
+        //tillbehör
+        h3 tillbehör
+        ul
+            li.menyItem(v-for="item in RettList" v-if="item.type == 5")
+                div(class="textDisplay " v-bind:class="[item.color]")
+                    p {{ item.name }}
+                h5  {{ item.prisePers }}kr/pers
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput2" value="0" min="0" v-bind:class="item.color")
                 button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
 
     #MenyDrinks(class="Meny")
         h1 Drika
+        
+        //alla okilka katogorier av drycker
+        //vindrycker
+        h3 vin
         ul
-            li.menyItem(v-for="item in DryckList")
-                p {{ item.name }} {{ item.prisePers }}kr/pers
+            li.menyItem(v-for="item in DryckList" v-if="item.type == 2")
+                p {{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}
                 label(for="antal") antal
-                input(type="number" name="antal" class="numberInput3" value="0" min="0")
+                input(type="number" name="antal" class="numberInput3" value="0" min="0" v-bind:class="item.color")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+        //öl 
+        h3 öl
+        ul
+            li.menyItem(v-for="item in DryckList" v-if="item.type == 1")
+                p {{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput3" value="0" min="0" v-bind:class="item.color")
+                button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
+        //alkoholfria drycker
+        h3 alkofrit
+        ul
+            li.menyItem(v-for="item in DryckList" v-if="item.type == 3")
+                p {{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}
+                label(for="antal") antal
+                input(type="number" name="antal" class="numberInput3" value="0" min="0" v-bind:class="item.color")
                 button(v-bind:class="item.color" v-on:click="add(item.id)") add to cart
 
 

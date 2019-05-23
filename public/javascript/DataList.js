@@ -1,68 +1,105 @@
 var DryckList =
-[
+[ //type 1 = öl , 2 = vin , 3 = alkoholfrit 
     {
         color: "green",
         name: "coca cola",
         prisePers: 25,
-        id: 1
+        endelse: "33cl",
+        id: 1,
+        type: 3
     },
     {
         color: "orange",
         name: "fanta",
         prisePers: 25,
-        id: 2
+        endelse: "33cl",
+        id: 2,
+        type: 3
     },
     {
         color: "blue",
         name: "7-up",
         prisePers: 25,
-        id: 3
+        endelse: "33cl",
+        id: 3,
+        type: 3
     },
     {
         color: "orange",
-        name: "öl",
+        name: "eriksberg",
         prisePers: 65,
-        id: 4
+        endelse: "0.5l",
+        id: 4,
+        type: 1
     },
     {
         color: "red",
         name: "en flaska röt vin",
         prisePers: 185,
-        id: 5
+        endelse: "700cl",
+        id: 5,
+        type: 2
     },
     {
         color: "red",
         name: "en flaska vit vin",
         prisePers: 200,
-        id: 5
+        endelse: "700cl",
+        id: 5,
+        type: 2
     }
 ]
 
 var RettList =
-[
+[//type 1 = köt , 2 = fisk , 3 = vegitariskt , 4 = salader, 5 = tillbehör
     {
         color: "green",
         name: "potatis gratäng",
         prisePers: 50,
-        id: 1
+        id: 1,
+        type: 5
     },
     {
         color: "blue",
         name: "köttbullar",
         prisePers: 36,
-        id: 2
+        id: 2,
+        type: 1
     },
     {
         color: "blue",
-        name: "pasta/kötfersås",
+        name: "pasta",
         prisePers: 45,
-        id: 3
+        id: 3,
+        type: 5
+    },
+    {
+        color: "red",
+        name: "ungsbakad lax",
+        prisePers: 45,
+        id: 4,
+        type: 2
+    },
+    {
+        color: "red",
+        name: "vegitarisak kötbullar",
+        prisePers: 45,
+        id: 5,
+        type: 3
+    },
+    {
+        color: "green",
+        name: "cesar salad",
+        prisePers: 45,
+        id: 6,
+        type: 4
     },
     {
         color: "blue",
-        name: "pasta/kötfersås",
+        name: "bea",
         prisePers: 45,
-        id: 3
+        id: 7,
+        type: 5
     }
 ]
 
@@ -99,6 +136,14 @@ var BuffeList =
         have: "grönsaker<br>falafel<br>bönsalad<br>vock<br>", 
         prisePers: 150,
         id: 3
+    },
+    {
+        color: "orange",
+        name: "Frukost buffe", 
+        about: "Denna buffen är perfekt för vegitarianen.",
+        have: "grönsaker<br>falafel<br>bönsalad<br>vock<br>", 
+        prisePers: 150,
+        id: 4
     }
 ];
 
