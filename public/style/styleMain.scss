@@ -116,6 +116,7 @@ main {
     }
 
     //tablets
+    /*ipad*/ 
     @media only screen and (max-width: 768px) {
 
         grid-template-rows: 220px 200px 400px;
@@ -153,6 +154,46 @@ main {
         }
     }
 
+    /*telefon*/
+    @media only screen and (max-width: 375px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 220px 200px 300px;
+        grid-template-areas: "valkomen"
+                            "Dbuffes"
+                            "event";
+
+        #DifrentBuffes {
+            margin: 10px;
+
+            /*tar bort ett av mat displayerna*/
+            .display:nth-child(3) {
+                display: none;
+            }
+
+            .display {
+                width: 80%;
+                height: 70%;
+                margin: 10px;
+
+                .textDisplay {
+                    min-width: 50px;
+                    height: 20px;
+                    font-size: 80%;
+                    top: 95%;
+                }
+            }
+
+        }
+
+        #PartyInfo {
+
+            #Info {
+                margin: 0;
+                width: 85%;
+            }
+    
+        }
+    }
 
 }
 
@@ -259,7 +300,7 @@ main {
     @media only screen and(max-width: 768px) {
         
         grid-template-columns: 20px 1fr 20px;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
         grid-template-areas:    ". MenyBuffer ."
                                 ". MenyRätter ."
                                 ". MenyDrinks .";
@@ -292,6 +333,24 @@ main {
             border: none;
         }
 
+    }
+
+    @media only screen and(max-width: 375px) {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:    "MenyBuffer"
+                                "MenyRätter"
+                                "MenyDrinks";
+        
+        #MenyBuffer, #MenyRatter, #MenyDrinks {
+
+            ul {
+                columns: 1;
+            }
+
+        }
+    
     }
 
 }
@@ -457,13 +516,6 @@ main {
         grid-template-columns: auto 1fr;
         grid-template-areas: "img info";
 
-        @media only screen and (max-width: 768px) {
-            grid-template-columns: auto 1fr;
-            grid-template-rows:  auto 1fr auto ;
-            grid-template-areas: ". img ."
-                                 ". info .";
-        }
-
         .display {
             grid-area: img;
 
@@ -471,10 +523,6 @@ main {
                 transform: none;
             }
 
-        }
-
-        img {
-            grid-area: img;
         }
 
         #textInfo {
@@ -498,7 +546,83 @@ main {
             }
 
         }
+
+        #message {
+            display: none;
+            grid-area: message;
+        }
         
+    }
+
+    @media only screen and (max-width: 768px) {
+        #infoDisplay {
+            grid-template-columns: auto 1fr;
+            grid-template-rows:  auto 1fr auto ;
+            grid-template-areas: ". img ."
+                                ". info .";
+        }
+    }
+
+    /*mibil veriasi*/
+    @media only screen and (max-width: 375px) {
+        #infoDisplay {
+            grid-template-columns: 80vw;
+            grid-template-rows: 1fr 50px auto;
+            grid-template-areas: "info"
+                                 "."
+                                 "message";
+
+            .display {
+                display: none;
+            }
+    
+            #textInfo {
+                grid-area: info;
+                padding: 10px;
+            }
+            
+            #message {
+                grid-area: message;
+                display: block;
+                max-width: 80vw;
+    
+                h1 {
+                    font-size: 140%;
+                }
+    
+                form {
+    
+                    label {
+                        margin: 0;
+                        font-size: 80%;
+                        color: rgb(87, 87, 87);
+                        margin-left: 10px;
+                    }
+    
+                    input[type=text] {
+                        width: 26em;
+                        margin: 5px;
+                    }
+    
+                    textarea {
+                        resize: none;
+                        width: 26em;
+                        margin: 5px;
+                    }
+    
+                    button {
+                        color: white;
+                        background-color: black;
+                        border: none;
+                        font-size: 13px;
+                        padding: 20px;
+                        padding: 3px;
+                    }
+    
+                }
+            }
+        
+        }
     }
 
 }
@@ -513,13 +637,6 @@ main {
         grid-template-rows:  auto 1fr;
         grid-template-areas: "img info"
                              ". info";
-
-        @media only screen and (max-width: 768px) {
-            grid-template-columns: auto 1fr;
-            grid-template-rows:  auto 1fr auto ;
-            grid-template-areas: ". img ."
-                                ". info .";
-        }
 
         .display {
             grid-area: img;
@@ -550,6 +667,27 @@ main {
                 padding-left: 15px;
             }
 
+        }
+
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: auto 1fr;
+            grid-template-rows:  auto 1fr auto ;
+            grid-template-areas: ". img ."
+                                ". info .";
+        }
+
+        @media only screen and (max-width: 375px) {
+            grid-template-columns: 1fr;
+            grid-template-rows:  1fr ;
+            grid-template-areas: "info";
+
+            .display {
+                display: none;
+            }
+
+            #textInfo {
+                padding: 10px;
+            }
         }
         
     }

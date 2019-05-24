@@ -6,13 +6,13 @@ main#mainOmOss
                 p Om Oss
         #textInfo
             h1(class="green") Om Oss
-            h3 vår historia
+            h3 Vem är vi?
             p.
-                välkomen till [företags namn] Lorem ipsum dolor sit amet, 
-                consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua.välkomen till [företags namn] Lorem ipsum dolor sit amet, 
-                consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua.
+                Vi är ett företag som håller på med catering sedan 2003 där vi gör allt 
+                från den lilla lunchen till stora fester. Vi ordnar allt från bröllop, 
+                dop, bergavningar, barnkalas, företagsevent, lilla bjudningen eller den 
+                stora bjudningen. Vill man ha trerättersmeny så är det bara att höra av 
+                sig om förslag. Vi har även allt porslin, glas och resten för hela festen. 
             
             h3 framtiden
             p.
@@ -20,4 +20,18 @@ main#mainOmOss
                 consectetur adipisicing elit, sed do eiusmod tempor incididunt 
                 ut labore et dolore magna aliqua.älkomen till [företags namn] Lorem ipsum dolor sit amet, 
                 consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua.
+                ut labore et dolore magna aliqua.   
+        #message
+            h1 Skicka ett medelande
+            form(method="post" action="php/formmail.php")
+                label(for="email") från
+                br
+                input(type="text" name="email" placeholder="test@yahoo.com")
+                br
+                label(for="subject") ämne
+                br
+                input(type="text" name="subject") 
+                br
+                textarea(name="message", cols="50", rows="7")
+                br
+                button(type="submit") skicka

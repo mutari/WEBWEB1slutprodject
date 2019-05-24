@@ -99,7 +99,7 @@ html body header ul li a:hover {
   color: gray;
 }
 
-html body header #dropDown {
+html body header #dropDown, html body header #ddcontent {
   display: none;
 }
 
@@ -116,9 +116,12 @@ html body header #dropDown {
 
 @media only screen and (max-width: 375px) {
   html body header {
-    -ms-grid-columns: 70px 1fr 100px;
-        grid-template-columns: 70px 1fr 100px;
+    -ms-grid-columns: 70px 1fr 30px;
+        grid-template-columns: 70px 1fr 30px;
         grid-template-areas: "logo . ddown";
+  }
+  html body header #meny {
+    display: none;
   }
   html body header #dropDown {
     -ms-grid-row: 1;
@@ -127,18 +130,24 @@ html body header #dropDown {
     position: relative;
     display: inline-block;
     border: solid 1px;
+    margin-top: 10px;
+    height: 20px;
+    width: 20px;
   }
   html body header #ddcontent {
-    display: none;
     position: absolute;
+    left: -70px;
     background-color: #f9f9f9;
-    min-width: 160px;
+    max-width: 200px;
     -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 12px 16px;
     z-index: 1;
+    border: solid 1px;
   }
-  html body header #dd:hover #ddcontent {
+  html body header #ddcontent a {
+    border: solid 1px;
+  }
+  html body header #dropDown:hover #ddcontent {
     display: block;
   }
 }
@@ -165,14 +174,6 @@ html body footer {
       grid-template-areas: "kontakt message ." ". copy .";
   padding: 20px;
   padding-bottom: 0px;
-}
-
-@media only screen and (max-width: 768px) {
-  html body footer {
-    -ms-grid-columns: 1fr 125px 1fr;
-        grid-template-columns: 1fr 125px 1fr;
-        grid-template-areas: "kontakt . message" ". copy .";
-  }
 }
 
 html body footer #kontakt {
@@ -251,6 +252,25 @@ html body footer #copy {
 html body footer #copy a {
   color: gray;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  html body footer {
+    -ms-grid-columns: 1fr 125px 1fr;
+        grid-template-columns: 1fr 125px 1fr;
+        grid-template-areas: "kontakt . message" ". copy .";
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  html body footer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "kontakt" "copy";
+  }
+  html body footer #message {
+    display: none;
+  }
 }
 
 html .orange {

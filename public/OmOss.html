@@ -27,13 +27,13 @@
           <li><img src="images/starEmpty.png"></li>
         </ul>
       </div>
-      <ul>
+      <ul id="meny">
         <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
         <li><a href="OmOss.html">Om oss</a></li>
         <li><a href="Event.html">Event</a></li>
         <li><a href="Mat.html">Mat</a></li>
       </ul>
-      <div id="dropDown"><span>Ö</span>
+      <div id="dropDown"><span><img src="images/Tab.png" width="100%" hight="100%"></span>
         <div id="ddcontent"> 
           <ul>
             <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
@@ -56,13 +56,13 @@
         </div>
         <div id="textInfo">
           <h1 class="green">Om Oss</h1>
-          <h3>vår historia</h3>
+          <h3>Vem är vi?</h3>
           <p>
-            välkomen till [företags namn] Lorem ipsum dolor sit amet, 
-            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.välkomen till [företags namn] Lorem ipsum dolor sit amet, 
-            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.
+            Vi är ett företag som håller på med catering sedan 2003 där vi gör allt 
+            från den lilla lunchen till stora fester. Vi ordnar allt från bröllop, 
+            dop, bergavningar, barnkalas, företagsevent, lilla bjudningen eller den 
+            stora bjudningen. Vill man ha trerättersmeny så är det bara att höra av 
+            sig om förslag. Vi har även allt porslin, glas och resten för hela festen. 
             
           </p>
           <h3>framtiden</h3>
@@ -71,8 +71,19 @@
             consectetur adipisicing elit, sed do eiusmod tempor incididunt 
             ut labore et dolore magna aliqua.älkomen till [företags namn] Lorem ipsum dolor sit amet, 
             consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.
+            ut labore et dolore magna aliqua.   
           </p>
+        </div>
+        <div id="message">
+          <h1>Skicka ett medelande</h1>
+          <form method="post" action="php/formmail.php">
+            <label for="email">från</label><br>
+            <input type="text" name="email" placeholder="test@yahoo.com"><br>
+            <label for="subject">ämne</label><br>
+            <input type="text" name="subject"><br>
+            <textarea name="message" cols="50" rows="7"></textarea><br>
+            <button type="submit">skicka</button>
+          </form>
         </div>
       </div>
     </main>

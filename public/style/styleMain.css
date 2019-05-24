@@ -60,6 +60,8 @@ main .textDisplay {
       grid-template-rows: 220px 200px 400px;
       grid-template-areas: "valkomen" "Dbuffes" "event";
   /*buffe priviu*/
+  /*ipad*/
+  /*telefon*/
 }
 
 #mainHome #valkomen {
@@ -157,6 +159,38 @@ main .textDisplay {
   }
   #mainHome #PartyInfo #Info {
     margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #mainHome {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 220px 200px 300px;
+        grid-template-rows: 220px 200px 300px;
+        grid-template-areas: "valkomen" "Dbuffes" "event";
+  }
+  #mainHome #DifrentBuffes {
+    margin: 10px;
+    /*tar bort ett av mat displayerna*/
+  }
+  #mainHome #DifrentBuffes .display:nth-child(3) {
+    display: none;
+  }
+  #mainHome #DifrentBuffes .display {
+    width: 80%;
+    height: 70%;
+    margin: 10px;
+  }
+  #mainHome #DifrentBuffes .display .textDisplay {
+    min-width: 50px;
+    height: 20px;
+    font-size: 80%;
+    top: 95%;
+  }
+  #mainHome #PartyInfo #Info {
+    margin: 0;
+    width: 85%;
   }
 }
 
@@ -275,8 +309,8 @@ main .textDisplay {
   #mainMat {
     -ms-grid-columns: 20px 1fr 20px;
         grid-template-columns: 20px 1fr 20px;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+    -ms-grid-rows: auto auto auto;
+        grid-template-rows: auto auto auto;
         grid-template-areas: ". MenyBuffer ." ". MenyRätter ." ". MenyDrinks .";
     padding-top: 10px;
   }
@@ -301,6 +335,20 @@ main .textDisplay {
   }
   #mainMat #MenyDrinks {
     border: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #mainMat {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "MenyBuffer" "MenyRätter" "MenyDrinks";
+  }
+  #mainMat #MenyBuffer ul, #mainMat #MenyRatter ul, #mainMat #MenyDrinks ul {
+    -webkit-columns: 1;
+            columns: 1;
   }
 }
 
@@ -451,6 +499,10 @@ main .textDisplay {
 }
 
 /*Om oss sida*/
+#mainOmOss {
+  /*mibil veriasi*/
+}
+
 #mainOmOss #infoDisplay {
   margin: 15px;
   display: -ms-grid;
@@ -458,16 +510,6 @@ main .textDisplay {
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
       grid-template-areas: "img info";
-}
-
-@media only screen and (max-width: 768px) {
-  #mainOmOss #infoDisplay {
-    -ms-grid-columns: auto 1fr;
-        grid-template-columns: auto 1fr;
-    -ms-grid-rows: auto 1fr auto;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas: ". img ." ". info .";
-  }
 }
 
 #mainOmOss #infoDisplay .display {
@@ -479,12 +521,6 @@ main .textDisplay {
 #mainOmOss #infoDisplay .display:hover {
   -webkit-transform: none;
           transform: none;
-}
-
-#mainOmOss #infoDisplay img {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: img;
 }
 
 #mainOmOss #infoDisplay #textInfo {
@@ -511,6 +547,74 @@ main .textDisplay {
   padding-left: 25px;
 }
 
+#mainOmOss #infoDisplay #message {
+  display: none;
+  grid-area: message;
+}
+
+@media only screen and (max-width: 768px) {
+  #mainOmOss #infoDisplay {
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+    -ms-grid-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: ". img ." ". info .";
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #mainOmOss #infoDisplay {
+    -ms-grid-columns: 80vw;
+        grid-template-columns: 80vw;
+    -ms-grid-rows: 1fr 50px auto;
+        grid-template-rows: 1fr 50px auto;
+        grid-template-areas: "info" "." "message";
+  }
+  #mainOmOss #infoDisplay .display {
+    display: none;
+  }
+  #mainOmOss #infoDisplay #textInfo {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: info;
+    padding: 10px;
+  }
+  #mainOmOss #infoDisplay #message {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: message;
+    display: block;
+    max-width: 80vw;
+  }
+  #mainOmOss #infoDisplay #message h1 {
+    font-size: 140%;
+  }
+  #mainOmOss #infoDisplay #message form label {
+    margin: 0;
+    font-size: 80%;
+    color: #575757;
+    margin-left: 10px;
+  }
+  #mainOmOss #infoDisplay #message form input[type=text] {
+    width: 26em;
+    margin: 5px;
+  }
+  #mainOmOss #infoDisplay #message form textarea {
+    resize: none;
+    width: 26em;
+    margin: 5px;
+  }
+  #mainOmOss #infoDisplay #message form button {
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 13px;
+    padding: 20px;
+    padding: 3px;
+  }
+}
+
 /*Event sida*/
 #mainEvent #infoDisplay {
   margin: 15px;
@@ -521,16 +625,6 @@ main .textDisplay {
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
       grid-template-areas: "img info" ". info";
-}
-
-@media only screen and (max-width: 768px) {
-  #mainEvent #infoDisplay {
-    -ms-grid-columns: auto 1fr;
-        grid-template-columns: auto 1fr;
-    -ms-grid-rows: auto 1fr auto;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas: ". img ." ". info .";
-  }
 }
 
 #mainEvent #infoDisplay .display {
@@ -566,5 +660,31 @@ main .textDisplay {
 
 #mainEvent #infoDisplay #textInfo p {
   padding-left: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  #mainEvent #infoDisplay {
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+    -ms-grid-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: ". img ." ". info .";
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #mainEvent #infoDisplay {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "info";
+  }
+  #mainEvent #infoDisplay .display {
+    display: none;
+  }
+  #mainEvent #infoDisplay #textInfo {
+    padding: 10px;
+  }
 }
 /*# sourceMappingURL=styleMain.css.map */
