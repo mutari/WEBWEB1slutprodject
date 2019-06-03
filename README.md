@@ -6,6 +6,8 @@ i mitt slutprodject har jag använt mig av pug samt scss
 Jag har inte skrivit html samt css filerna utan har endast skrivit pug och scss filerna och sedan compilerat dessa filer.
 Jag har endast skrivit komentarer i pug/scss filerna.
 
+alla mina bilder har jag annpasat storleken på så got jag har kunnat med hjälp av photo shop samt min logo har jag gjort i photoshop
+
 ## Varför jag gjort på vissa sätt
 * anldeningen till att jag delade upp css i två filer är för att main diven kräver mest css och för att inte detta ska fylla hella huvud css:en la jag main i en egen css fil
 detta göt css mer lättläslig
