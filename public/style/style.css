@@ -2,6 +2,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* univarsielt för alla sidor */
@@ -39,7 +40,12 @@ html body header {
   position: -webkit-sticky;
   position: sticky;
   z-index: 10;
+  /*hedaren ska alltid var överst*/
   top: 0;
+  /*normal meny*/
+  /*mobil meny*/
+  /*ipad*/
+  /*iphon*/
 }
 
 html body header #logo {
@@ -52,7 +58,8 @@ html body header #logo img {
   margin: 10px;
   width: 50px;
   height: 50px;
-  border: solid 1px black;
+  -webkit-box-shadow: 0px 0px 10px 2px #5e5e5e;
+          box-shadow: 0px 0px 10px 2px #5e5e5e;
 }
 
 html body header #stars {
@@ -77,7 +84,7 @@ html body header #stars ul li {
   margin-left: 1px;
 }
 
-html body header ul {
+html body header #meny {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: meny;
@@ -85,17 +92,17 @@ html body header ul {
   margin: 25px 0 30px 0;
 }
 
-html body header ul li {
+html body header #meny li {
   float: right;
   margin-right: 20px;
 }
 
-html body header ul li a {
+html body header #meny li a {
   text-decoration: none;
   color: black;
 }
 
-html body header ul li a:hover {
+html body header #meny li a:hover {
   color: gray;
 }
 
@@ -119,6 +126,8 @@ html body header #dropDown, html body header #ddcontent {
     -ms-grid-columns: 70px 1fr 30px;
         grid-template-columns: 70px 1fr 30px;
         grid-template-areas: "logo . ddown";
+    /*tar bort den vanliga menyn*/
+    /*mobil menyn*/
   }
   html body header #meny {
     display: none;
@@ -129,26 +138,50 @@ html body header #dropDown, html body header #ddcontent {
     grid-area: ddown;
     position: relative;
     display: inline-block;
-    border: solid 1px;
     margin-top: 10px;
     height: 20px;
     width: 20px;
   }
   html body header #ddcontent {
     position: absolute;
-    left: -70px;
-    background-color: #f9f9f9;
-    max-width: 200px;
+    left: -45px;
     -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border: solid 1px;
+    padding: 0;
+  }
+  html body header #ddcontent ul {
+    margin: 0;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: white;
+    padding: 4px;
+  }
+  html body header #ddcontent li {
+    margin: 3px;
   }
   html body header #ddcontent a {
-    border: solid 1px;
+    border-bottom: solid 1px;
+    background-color: azure;
+    text-decoration: none;
+    color: black;
   }
   html body header #dropDown:hover #ddcontent {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -174,6 +207,8 @@ html body footer {
       grid-template-areas: "kontakt message ." ". copy .";
   padding: 20px;
   padding-bottom: 0px;
+  /*ipad*/
+  /*iphon*/
 }
 
 html body footer #kontakt {

@@ -1,5 +1,6 @@
 main#mainOrder
     #order
+        //tabbel som visar vad som finns i kundkorg
         table
             caption.red Varukorg
             thead
@@ -30,15 +31,19 @@ main#mainOrder
         //hur man hämtar produkten
         #transport 
             form 
-                #toggel
-                    input(type="checkbox" name="checkbox" id="checkbox" class="ios-toggle")
-                    label(for="checkbox" class="checkbox-label" data-off="off" data-on="on")
+                #leverans
+                    //H = hemta i butik L = leverans till addres
+                    input(type="radio" name="tran" value="H" checked) 
+                    span Hämta på plats:
+                    br
+                    input(type="radio" name="tran" value="L") 
+                    span Hemkörning, 150/kr
                 #addres
                     label(for="addres") Address:
-                    input(type="text" name="addres")
+                    input(type="text" name="addres" id="add")
                     br
                     label(for="postcod") Post Code:
-                    input(type="text" name="postcod")
+                    input(type="text" name="postcod" id="post")
 
         //betalnig
         fieldset#betala
@@ -52,38 +57,40 @@ main#mainOrder
                         option(value="Visa") Visa
                 div
                     label(for="kortnummer") Kortnummer:
-                    input(type="text" name="kortunmmer")
+                    input(type="text" name="kortnummer" id="kortnummer")
                 div
                     label(for="datum") Datum:
-                    input(type="number" name="moth" max="99" min="00") 
+                    input(type="number" name="moth" max="99" min="00" id="moth") 
                     label(for="year") /
-                    input(type="number" name="year" max="99" min="00")
+                    input(type="number" name="year" max="99" min="00" id="year")
                 div
                     label(for="CVI") CVI: 
-                    input(type="text" name="CSC" max="999" min="000")
+                    input(type="number" name="CVI" max="999" min="000" id="CVC")
                 button(onclick="buy();")
                     img(src="images/shopping-cart.png" width="16" hight="16")
 
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js")
     script.
-        //när sidan har laddats så gömer man transport diven
-        document.getElementById('addres').style.display = "none";
-        document.getElementById('addres').addEventListener('change', TransportHome());
 
         //tack vare Vue kan jag uppdatera tabbelen med produkter automatiskt utan att behöva uppdatera sidan
         var app = new Vue({
             el: "#mainOrder",
             data: {
-                orders: JSON.parse(window.localStorage.getItem("Orders"))
+                orders: JSON.parse(window.localStorage.getItem("Orders")), // hemtar kundkorgen i från localstorage
+                prisePlus: 0 //om mna har övriga kostnader som till exempel frakt
             },
             methods: {
-                TotalPris: function() {
-                    var total = 0;
-                    for(var i = 0; i < this.orders.length; i++) {
-                        total += this.orders[i].totalPrise;
+                TotalPris: function() { //beräknar det totala priset
+                    if(this.orders != null) {
+                        var total = this.prisePlus;
+                        for(var i = 0; i < this.orders.length; i++) {
+                            total += this.orders[i].totalPrise;
+                        }
+                        return total.toString();
                     }
-                    return total.toString();
+                    return this.prisePlus;
                 },
-                Delete: function(id) {
+                Delete: function(id) { // raderar ett item i från kundkorgen
                     //tar bort den ordern med det specifika id
                     for(var i = 0; i < this.orders.length; i++) {
                         if(this.orders[i].id == id) {
@@ -100,5 +107,17 @@ main#mainOrder
                         }
                     }
                 }
+            }
+        });
+
+        //öpnar stänger addres menyn 
+        $("input[name='tran']").click(function(){
+            if(this.value === 'L') {
+                $("#addres").show();
+                app.prisePlus = 150;
+            }
+            else {
+                $("#addres").hide();
+                app.prisePlus = 0;
             }
         });

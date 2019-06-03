@@ -2,6 +2,7 @@
 /*samma för alla*/
 main {
   /*bilder med label på*/
+  /*sätter en text ruta på en bild*/
 }
 
 main .display {
@@ -205,6 +206,12 @@ main .textDisplay {
       grid-template-areas: ". . ." "MenyBuffer MenyRätter MenyDrinks" ". . .";
   background-color: #effdf5;
   /*samma för alla menyer*/
+  /*ett objekt i en meny*/
+  /*positionen för Buffer*/
+  /*positionen för rätter*/
+  /*positionen för drycker*/
+  /*ipad*/
+  /*iphon*/
 }
 
 #mainMat label {
@@ -369,6 +376,8 @@ main .textDisplay {
 #mainOrder #order {
   border: solid 1px;
   padding: 20px;
+  /*display för inehålet av kundkorgen*/
+  /*betalla för produket*/
 }
 
 #mainOrder #order table {
@@ -437,6 +446,7 @@ main .textDisplay {
 }
 
 #mainOrder #order #transport form #addres {
+  display: none;
   border: solid 1px;
   padding: 10px;
   margin-top: 15px;
@@ -482,7 +492,7 @@ main .textDisplay {
   outline: 0;
 }
 
-#mainOrder #order #betala form input[name="CSC"] {
+#mainOrder #order #betala form input[name="CVI"] {
   width: 22px;
   overflow: hidden;
 }
@@ -500,6 +510,7 @@ main .textDisplay {
 
 /*Om oss sida*/
 #mainOmOss {
+  /*ipad*/
   /*mibil veriasi*/
 }
 
@@ -625,6 +636,8 @@ main .textDisplay {
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
       grid-template-areas: "img info" ". info";
+  /*ipad*/
+  /*iphon*/
 }
 
 #mainEvent #infoDisplay .display {

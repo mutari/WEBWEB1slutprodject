@@ -2,24 +2,28 @@
 <html leng="sv">
   <head>
     <title>catering</title>
-    <!--link(rel="stylesheet" href="/fileCSS/style.css")-->
-    <!--link(rel="stylesheet" href="/fileCSS/styleMain.css")-->
+    <!--style-->
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/styleMain.css">
-    <!--script(src="/fileJS/DataList.js")-->
-    <!--script(src="/fileJS/order.js")-->
+    <!--javascript-->
+    <!--file med meny objekt-->
     <script src="javascript/DataList.js"></script>
     <script src="javascript/order.js"></script>
+    <!--vue bibliotek-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="images/logo32.png">
   </head>
   <body>
     <!-- header element inehåller en meny samt logo bild-->
     <header> 
-      <div id="logo"><a href="index.html"><img></a></div>
+      <!--logo, knapp för att ta sig till huvudmenyn-->
+      <div id="logo"><a href="index.html"><img src="images/logo64.png"></a></div>
+      <!--starts-->
       <div id="stars">
-        <ul>
+        <ul id="starList">
           <li><img src="images/star.png"></li>
           <li><img src="images/star.png"></li>
           <li><img src="images/star.png"></li>
@@ -27,19 +31,21 @@
           <li><img src="images/starEmpty.png"></li>
         </ul>
       </div>
+      <!--normal meny-->
       <ul id="meny">
         <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
         <li><a href="OmOss.html">Om oss</a></li>
         <li><a href="Event.html">Event</a></li>
         <li><a href="Mat.html">Mat</a></li>
       </ul>
+      <!--meny för telefoner-->
       <div id="dropDown"><span><img src="images/Tab.png" width="100%" hight="100%"></span>
         <div id="ddcontent"> 
           <ul>
-            <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
-            <li><a href="OmOss.html">Om oss</a></li>
-            <li><a href="Event.html">Event</a></li>
             <li><a href="Mat.html">Mat</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="OmOss.html">Om oss</a></li>
+            <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
           </ul>
         </div>
       </div>
@@ -52,30 +58,32 @@
         <div id="valkomenInfo">
           <h1>Välkommen</h1>
           <p>
-            välkomen till [företags namn] Lorem ipsum dolor sit amet, 
-            consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.
+            Välkomen till nygårds catering, Ett företag med härprodoserad råvaror och ett starkt klimattänkt.
+            Vi tror på en kombination av kvalité och det enkla. Vi använder noga utvalda produkter i alla vår rätter, 
+            Många av våra råvaror odlas direkt på gården.
           </p>
         </div><img src="images/Welcome.jpg" width="100%" hight="100%">
       </div>
       <div id="DifrentBuffes">
+        <!--data för bild displayeren i frösta sidan-->
         <div class="display"><a href="Mat.html"><img src="images/buffe1.jpg" width="100%">
             <div class="orange textDisplay">
-              <p>buffe</p>
+              <p>buffé</p>
             </div></a></div>
         <div class="display"><a href="Mat.html"><img src="images/buffe3.jpg" width="100%">
             <div class="red textDisplay">
-              <p>salads buffe</p>
+              <p>salads buffé</p>
             </div></a></div>
         <div class="display"><a href="Mat.html"><img src="images/buffe2.jpg" width="100%">
             <div class="green textDisplay">
-              <p>vego buffe</p>
+              <p>vego buffé</p>
             </div></a></div>
         <div class="display"><a href="Mat.html"><img src="images/rett1.jpg" width="100%">
             <div class="blue textDisplay">
-              <p>oxe</p>
+              <p>kött</p>
             </div></a></div>
       </div>
+      <!--info om event samt bild-->
       <div id="PartyInfo">
         <div class="display"><a href="Event.html"><img src="images/party.jpg">
             <div class="blue textDisplay">
@@ -89,11 +97,12 @@
     </main>
     <!-- footer inehåler kontakt uppgifter och ett mail formolär-->
     <footer>
+      <!--kontakta mig-->
       <div id="kontakt">
         <div>
           <h1>Kontakt uppgifter</h1>
-          <p>address: ingland strase</p>
-          <p>post cod: 90999</p>
+          <p>address: Nygard 354</p>
+          <p>post nummer: 30591 Halmstad</p>
           <h3>tel:</h3>
           <p>070-000 11 33</p>
           <h5>teltider</h5>
@@ -101,6 +110,7 @@
           <p class="tider">sön stängt</p>
         </div>
       </div>
+      <!--skicka ett mail till min skol mail-->
       <div id="message">
         <h1>Skicka ett medelande</h1>
         <form method="post" action="php/formmail.php">
@@ -112,6 +122,7 @@
           <button type="submit">skicka</button>
         </form>
       </div>
+      <!--copyrit-->
       <p id="copy">©philip johansson 
         <!-- länk till sorce koden på git hub--><a href="https://github.com/mutari/WEBWEB1slutprodject" target="_blank">GitHub</a>
       </p>

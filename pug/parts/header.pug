@@ -1,27 +1,31 @@
 header 
+    //logo, knapp för att ta sig till huvudmenyn
     #logo
         a(href="index.html")
-            img
+            img(src="images/logo64.png")
+    //starts
     #stars
-        ul
+        ul#starList
             li: img(src="images/star.png")
             li: img(src="images/star.png")
             li: img(src="images/star.png")
             li: img(src="images/star.png")
             li: img(src="images/starEmpty.png")
+    //normal meny
     ul#meny
         li: a(href="Order.html") 
                 img(src="images/shopping-cart.png" width="16px" hight="16px")
         li: a(href="OmOss.html") Om oss
         li: a(href="Event.html") Event
         li: a(href="Mat.html") Mat
+    //meny för telefoner
     #dropDown
         span
             img(src="images/Tab.png" width="100%" hight="100%")
         #ddcontent 
             ul
+                li: a(href="Mat.html") Mat
+                li: a(href="Event.html") Event
+                li: a(href="OmOss.html") Om oss
                 li: a(href="Order.html") 
                         img(src="images/shopping-cart.png" width="16px" hight="16px")
-                li: a(href="OmOss.html") Om oss
-                li: a(href="Event.html") Event
-                li: a(href="Mat.html") Mat

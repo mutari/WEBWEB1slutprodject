@@ -2,7 +2,7 @@ var DryckList =
 [ //type 1 = öl , 2 = vin , 3 = alkoholfrit 
     {
         color: "green",
-        name: "coca cola",
+        name: "Coca Cola",
         prisePers: 25,
         endelse: "33cl",
         id: 1,
@@ -10,7 +10,7 @@ var DryckList =
     },
     {
         color: "orange",
-        name: "fanta",
+        name: "Fanta",
         prisePers: 25,
         endelse: "33cl",
         id: 2,
@@ -26,7 +26,7 @@ var DryckList =
     },
     {
         color: "orange",
-        name: "eriksberg",
+        name: "Eriksberg",
         prisePers: 65,
         endelse: "0.5l",
         id: 4,
@@ -34,7 +34,7 @@ var DryckList =
     },
     {
         color: "red",
-        name: "en flaska röt vin",
+        name: "En flaska röt vin",
         prisePers: 185,
         endelse: "700cl",
         id: 5,
@@ -42,7 +42,7 @@ var DryckList =
     },
     {
         color: "red",
-        name: "en flaska vit vin",
+        name: "En flaska vit vin",
         prisePers: 200,
         endelse: "700cl",
         id: 5,
@@ -54,49 +54,49 @@ var RettList =
 [//type 1 = köt , 2 = fisk , 3 = vegitariskt , 4 = salader, 5 = tillbehör
     {
         color: "green",
-        name: "potatis gratäng",
+        name: "Potatis gratäng",
         prisePers: 50,
         id: 1,
         type: 5
     },
     {
         color: "blue",
-        name: "köttbullar",
-        prisePers: 36,
+        name: "Oxfilé",
+        prisePers: 150,
         id: 2,
         type: 1
     },
     {
         color: "blue",
-        name: "pasta",
+        name: "Räkpasta",
         prisePers: 45,
         id: 3,
         type: 5
     },
     {
         color: "red",
-        name: "ungsbakad lax",
+        name: "Ungsbakad lax",
         prisePers: 45,
         id: 4,
         type: 2
     },
     {
         color: "red",
-        name: "vegitarisak kötbullar",
+        name: "Vegitarisak kötbullar",
         prisePers: 45,
         id: 5,
         type: 3
     },
     {
         color: "green",
-        name: "cesar salad",
+        name: "Ceasar sallad",
         prisePers: 45,
         id: 6,
         type: 4
     },
     {
         color: "blue",
-        name: "bea",
+        name: "Bea",
         prisePers: 45,
         id: 7,
         type: 5
@@ -109,8 +109,9 @@ var BuffeList =
         color: "green",
         name: "Grill Buffe", 
         about: "Denna buffe består av blandane grillade rätter.",
-        have: "kykling spätt lätt grilade<br>oxfele(väljs själv hur grilad)<br>potatis gratäng<br>bea", 
+        have: "kykling spett lätt grillade<br>oxfilé(väljs själv grilningsgrad)<br>potatis gratäng<br>bea", 
         prisePers: 220,
+        type: 1,
         id: 1
     },
     {
@@ -119,6 +120,7 @@ var BuffeList =
         about: "Denna buffen är perfekt för vegitarianen.",
         have: "grönsaker<br>falafel<br>bönsalad<br>vock<br>", 
         prisePers: 150,
+        type: 1,
         id: 2
     },
     {
@@ -127,6 +129,7 @@ var BuffeList =
         about: "Denna buffen är perfekt för vegitarianen.",
         have: "grönsaker<br>falafel<br>bönsalad<br>vock<br>", 
         prisePers: 150,
+        type: 1,
         id: 3
     },
     {
@@ -135,6 +138,7 @@ var BuffeList =
         about: "Denna buffen är perfekt för vegitarianen.",
         have: "grönsaker<br>falafel<br>bönsalad<br>vock<br>", 
         prisePers: 150,
+        type: 1,
         id: 3
     },
     {
@@ -143,6 +147,7 @@ var BuffeList =
         about: "Denna buffen är perfekt för vegitarianen.",
         have: "grönsaker<br>falafel<br>bönsalad<br>vock<br>", 
         prisePers: 150,
+        type: 1,
         id: 4
     }
 ];

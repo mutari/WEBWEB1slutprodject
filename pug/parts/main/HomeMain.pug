@@ -3,18 +3,20 @@ main#mainHome
         #valkomenInfo
             h1 Välkommen
             p.
-                välkomen till [företags namn] Lorem ipsum dolor sit amet, 
-                consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua.
+                Välkomen till nygårds catering, Ett företag med härprodoserad råvaror och ett starkt klimattänkt.
+                Vi tror på en kombination av kvalité och det enkla. Vi använder noga utvalda produkter i alla vår rätter, 
+                Många av våra råvaror odlas direkt på gården.
         img(src="images/Welcome.jpg" width="100%" hight="100%")
     #DifrentBuffes
-        - var Buffes = [ {name: "buffe", color: "orange", src: "images/buffe1.jpg"}, {name: "salads buffe", color: "red", src: "images/buffe3.jpg"}, {name: "vego buffe", color: "green", src: "images/buffe2.jpg"}, {name: "oxe", color: "blue", src: "images/rett1.jpg"} ];
+        //data för bild displayeren i frösta sidan
+        - var Buffes = [ {name: "buffé", color: "orange", src: "images/buffe1.jpg"}, {name: "salads buffé", color: "red", src: "images/buffe3.jpg"}, {name: "vego buffé", color: "green", src: "images/buffe2.jpg"}, {name: "kött", color: "blue", src: "images/rett1.jpg"} ];
         - for(var i = 0; i < 4; i++)
             .display
                 a(href="Mat.html")
                     img(src=Buffes[i].src width="100%")
                     div(class=Buffes[i].color + ' textDisplay')
                         p=Buffes[i].name
+    //info om event samt bild
     #PartyInfo
         .display
             a(href="Event.html")

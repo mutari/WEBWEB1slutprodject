@@ -2,24 +2,28 @@
 <html leng="sv">
   <head>
     <title>catering</title>
-    <!--link(rel="stylesheet" href="/fileCSS/style.css")-->
-    <!--link(rel="stylesheet" href="/fileCSS/styleMain.css")-->
+    <!--style-->
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/styleMain.css">
-    <!--script(src="/fileJS/DataList.js")-->
-    <!--script(src="/fileJS/order.js")-->
+    <!--javascript-->
+    <!--file med meny objekt-->
     <script src="javascript/DataList.js"></script>
     <script src="javascript/order.js"></script>
+    <!--vue bibliotek-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="images/logo32.png">
   </head>
   <body>
     <!-- header element inehåller en meny samt logo bild-->
     <header> 
-      <div id="logo"><a href="index.html"><img></a></div>
+      <!--logo, knapp för att ta sig till huvudmenyn-->
+      <div id="logo"><a href="index.html"><img src="images/logo64.png"></a></div>
+      <!--starts-->
       <div id="stars">
-        <ul>
+        <ul id="starList">
           <li><img src="images/star.png"></li>
           <li><img src="images/star.png"></li>
           <li><img src="images/star.png"></li>
@@ -27,19 +31,21 @@
           <li><img src="images/starEmpty.png"></li>
         </ul>
       </div>
+      <!--normal meny-->
       <ul id="meny">
         <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
         <li><a href="OmOss.html">Om oss</a></li>
         <li><a href="Event.html">Event</a></li>
         <li><a href="Mat.html">Mat</a></li>
       </ul>
+      <!--meny för telefoner-->
       <div id="dropDown"><span><img src="images/Tab.png" width="100%" hight="100%"></span>
         <div id="ddcontent"> 
           <ul>
-            <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
-            <li><a href="OmOss.html">Om oss</a></li>
-            <li><a href="Event.html">Event</a></li>
             <li><a href="Mat.html">Mat</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="OmOss.html">Om oss</a></li>
+            <li><a href="Order.html"> <img src="images/shopping-cart.png" width="16px" hight="16px"></a></li>
           </ul>
         </div>
       </div>
@@ -50,7 +56,7 @@
     <main id="mainMat">
       <!--buffe meny alla buffer man kan beställa-->
       <div class="Meny" id="MenyBuffer">
-        <h1>Buffeer</h1>
+        <h1>Buffé</h1>
         <ul>
           <li class="menyItem" v-for="item in BuffeList">
             <div class="textDisplay " v-bind:class="item.color">
@@ -60,8 +66,8 @@
             <p v-html="item.have"></p>
             <h5>{{ item.prisePers }}kr/pars</h5>
             <label for="antal">antal</label>
-            <input class="numberInput1" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput1' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
       </div>
@@ -76,8 +82,8 @@
             </div>
             <h5> {{ item.prisePers }}kr/pers</h5>
             <label for="antal">antal</label>
-            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput2' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
         <!--fisk-->
@@ -89,8 +95,8 @@
             </div>
             <h5> {{ item.prisePers }}kr/pers</h5>
             <label for="antal">antal</label>
-            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput2' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
         <!--vegitariskt-->
@@ -102,8 +108,8 @@
             </div>
             <h5> {{ item.prisePers }}kr/pers</h5>
             <label for="antal">antal</label>
-            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput2' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
         <!--sallader-->
@@ -115,8 +121,8 @@
             </div>
             <h5> {{ item.prisePers }}kr/pers</h5>
             <label for="antal">antal</label>
-            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput2' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
         <!--tillbehör-->
@@ -128,13 +134,13 @@
             </div>
             <h5> {{ item.prisePers }}kr/pers</h5>
             <label for="antal">antal</label>
-            <input class="numberInput2" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput2' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
       </div>
       <div class="Meny" id="MenyDrinks">
-        <h1>Drika</h1>
+        <h1>Dryck</h1>
         <!--alla okilka katogorier av drycker-->
         <!--vindrycker-->
         <h3>vin</h3>
@@ -142,8 +148,8 @@
           <li class="menyItem" v-for="item in DryckList" v-if="item.type == 2">
             <p>{{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}</p>
             <label for="antal">antal</label>
-            <input class="numberInput3" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput3' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
         <!--öl -->
@@ -152,18 +158,18 @@
           <li class="menyItem" v-for="item in DryckList" v-if="item.type == 1">
             <p>{{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}</p>
             <label for="antal">antal</label>
-            <input class="numberInput3" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput3' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
         <!--alkoholfria drycker-->
-        <h3>alkofrit</h3>
+        <h3>alkohlfritt</h3>
         <ul>
           <li class="menyItem" v-for="item in DryckList" v-if="item.type == 3">
             <p>{{ item.name }} {{ item.prisePers }}kr/{{ item.endelse }}</p>
             <label for="antal">antal</label>
-            <input class="numberInput3" type="number" name="antal" value="0" min="0" v-bind:class="item.color">
-            <button v-bind:class="item.color" v-on:click="add(item.id)">add to cart</button>
+            <input type="number" name="antal" value="0" min="0" v-bind:class="[item.color, 'numberInput3' + item.id]">
+            <button v-bind:class="item.color" v-on:click="add(item.id)">Lägg till i kundkorg</button>
           </li>
         </ul>
       </div>
@@ -207,11 +213,12 @@
     </main>
     <!-- footer inehåler kontakt uppgifter och ett mail formolär-->
     <footer>
+      <!--kontakta mig-->
       <div id="kontakt">
         <div>
           <h1>Kontakt uppgifter</h1>
-          <p>address: ingland strase</p>
-          <p>post cod: 90999</p>
+          <p>address: Nygard 354</p>
+          <p>post nummer: 30591 Halmstad</p>
           <h3>tel:</h3>
           <p>070-000 11 33</p>
           <h5>teltider</h5>
@@ -219,6 +226,7 @@
           <p class="tider">sön stängt</p>
         </div>
       </div>
+      <!--skicka ett mail till min skol mail-->
       <div id="message">
         <h1>Skicka ett medelande</h1>
         <form method="post" action="php/formmail.php">
@@ -230,6 +238,7 @@
           <button type="submit">skicka</button>
         </form>
       </div>
+      <!--copyrit-->
       <p id="copy">©philip johansson 
         <!-- länk till sorce koden på git hub--><a href="https://github.com/mutari/WEBWEB1slutprodject" target="_blank">GitHub</a>
       </p>
